@@ -5,9 +5,13 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Old Time Crank | Phonographs & Antiques</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
@@ -21,7 +25,7 @@
           <nav class="main-nav">
             <ul>
               <li><a href="#hero">Home</a></li>
-              <li><a href="#products">Collection</a></li>
+              <li><a href="#products">Items For Sale</a></li>
               <li><a href="#about">Our Story</a></li>
               <li><a href="#contact" class="btn btn-outline">Contact</a></li>
             </ul>
@@ -38,9 +42,9 @@
         <section id="hero" class="hero-section">
           <div class="hero-bg-overlay"></div>
           <div class="container hero-content">
-            <h1 class="hero-title fade-in-up">Preserving the <span class="text-accent">Sound</span> of History</h1>
-            <p class="hero-subtitle fade-in-up delay-1">Exquisite phonographs, rare cylinders, and timeless antiques for the discerning collector.</p>
-            <div class="hero-actions fade-in-up delay-2">
+            <h1 class="hero-title" data-aos="fade-up" data-aos-duration="1000">Preserving the <span class="text-accent">Sound</span> of History</h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Exquisite phonographs, rare cylinders, and timeless antiques for the discerning collector.</p>
+            <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
               <a href="#products" class="btn btn-primary">View Collection</a>
               <a href="#about" class="btn btn-text">Learn More &rarr;</a>
             </div>
@@ -49,25 +53,23 @@
 
         <section id="products" class="products-section">
           <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
               <h2 class="section-title">Curated Collection</h2>
               <p class="section-desc">Hand-picked treasures from the golden age of audio.</p>
             </div>
-            <div class="product-grid" id="product-grid">
-              <!-- Products injected via JS -->
-            </div>
+            <div class="product-grid" id="product-grid" data-aos="fade-up" data-aos-delay="200">
+              </div>
           </div>
         </section>
 
         <section id="about" class="about-section">
           <div class="container about-inner">
-            <div class="about-image">
+            <div class="about-image" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
               <div class="image-frame">
-                 <!-- Placeholder for about image -->
                  <div class="placeholder-img"></div>
               </div>
             </div>
-            <div class="about-content">
+            <div class="about-content" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
               <h2 class="section-title">The Crank Philosophy</h2>
               <p>At Old Time Crank, we believe that every scratch and patina tells a story. We specialize in restoring and selling authentic Edison phonographs, Victrolas, and rare wax cylinders.</p>
               <p>Founded by enthusiasts for enthusiasts, we ensure every piece that leaves our shop is in working order, ready to fill your home with the warm, analog sounds of the past.</p>
@@ -77,7 +79,7 @@
         </section>
       </main>
 
-      <footer class="site-footer">
+      <footer class="site-footer" data-aos="fade-in" data-aos-offset="100">
         <div class="container footer-inner">
           <div class="footer-col">
             <h3>Old Time Crank</h3>
@@ -102,6 +104,15 @@
         </div>
       </footer>
     </div>
+    
     <script type="module" src="/main.js"></script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize the animation library
+      AOS.init({
+        once: true, // Animations happen only once - while scrolling down
+      });
+    </script>
   </body>
 </html>
