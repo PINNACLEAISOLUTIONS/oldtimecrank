@@ -49,22 +49,9 @@ const menuToggle = document.querySelector('.mobile-menu-toggle');
 const mainNav = document.querySelector('.main-nav');
 
 menuToggle.addEventListener('click', () => {
-  const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-  menuToggle.setAttribute('aria-expanded', !isExpanded);
-  
-  // For simplicity in this vanilla setup, we'll just toggle a class
-  // In a real app we'd have better state management
-  if (mainNav.style.display === 'block') {
-    mainNav.style.display = 'none';
-  } else {
-    mainNav.style.display = 'block';
-    mainNav.style.position = 'absolute';
-    mainNav.style.top = '100%';
-    mainNav.style.left = '0';
-    mainNav.style.width = '100%';
-    mainNav.style.background = '#1a261a';
-    mainNav.style.padding = '1rem';
-  }
+  mainNav.classList.toggle('active');
+  const isExpanded = mainNav.classList.contains('active');
+  menuToggle.setAttribute('aria-expanded', isExpanded);
 });
 
 // Smooth Scroll for Anchor Links

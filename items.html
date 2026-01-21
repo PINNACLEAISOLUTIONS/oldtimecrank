@@ -146,22 +146,27 @@
                 <div class="footer-col">
                     <h4>Explore</h4>
                     <ul>
-                        <li><a href="#">Phonographs</a></li>
-                        <li><a href="#">Cylinders</a></li>
-                        <li><a href="#">Parts & Repair</a></li>
+                        <li><a href="items.html">Items For Sale</a></li>
+                        <li><a href="https://www.ebay.com/str/oldtimecrank" target="_blank">Our eBay Reviews</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Connect</h4>
-                    <p>123 Vintage Lane<br>Historyville, USA</p>
+                    <p>Fort White, FL</p>
                     <p><a href="tel:9546491037">954-649-1037</a></p>
-                    <p><a href="mailto:miketpatella@yahoo.com">miketpatella@yahoo.com</a></p>
+                    <p><a href="mailto:oldtimecrank@gmail.com">oldtimecrank@gmail.com</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Old Time Crank. All rights reserved.</p>
             </div>
         </footer>
+
+        <!-- Floating Call Button -->
+        <a href="tel:9546491037" class="floating-call-btn" aria-label="Call Us">
+            <span class="call-icon">📞</span>
+            <span class="call-text">Call Us</span>
+        </a>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -175,20 +180,9 @@
         const mainNav = document.querySelector('.main-nav');
 
         menuToggle.addEventListener('click', () => {
-            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', !isExpanded);
-
-            if (mainNav.style.display === 'block') {
-                mainNav.style.display = 'none';
-            } else {
-                mainNav.style.display = 'block';
-                mainNav.style.position = 'absolute';
-                mainNav.style.top = '100%';
-                mainNav.style.left = '0';
-                mainNav.style.width = '100%';
-                mainNav.style.background = '#1a261a';
-                mainNav.style.padding = '1rem';
-            }
+            mainNav.classList.toggle('active');
+            const isExpanded = mainNav.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
         });
     </script>
 </body>

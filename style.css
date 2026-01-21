@@ -191,6 +191,8 @@ img {
   background: none;
   border: none;
   cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
 }
 
 .mobile-menu-toggle span {
@@ -199,6 +201,48 @@ img {
   height: 2px;
   background-color: var(--color-brass);
   margin: 5px 0;
+  transition: var(--transition);
+}
+
+/* Mobile Nav Styles */
+.main-nav.active {
+  display: block !important;
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(26, 38, 26, 0.98);
+    padding: 1rem;
+    border-top: 1px solid var(--color-brass);
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .main-nav ul li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+  }
+
+  .main-nav ul li:last-child {
+    border-bottom: none;
+  }
+
+  .main-nav a {
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
 }
 
 /* Hero */
@@ -673,5 +717,58 @@ img {
 
   .item-price {
     font-size: 1.4rem;
+  }
+}
+
+/* Floating Call Button */
+.floating-call-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--color-brass), var(--color-brass-light));
+  color: var(--color-deep-woods);
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  font-family: var(--font-subheading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.floating-call-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, var(--color-brass-light), var(--color-brass));
+}
+
+.call-icon {
+  font-size: 1.2rem;
+}
+
+.call-text {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .floating-call-btn {
+    bottom: 20px;
+    right: 20px;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .call-text {
+    display: none;
+  }
+
+  .floating-call-btn {
+    padding: 1rem;
+    border-radius: 50%;
   }
 }
