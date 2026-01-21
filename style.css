@@ -1,12 +1,14 @@
 :root {
-  --color-deep-woods: #141f14;
-  --color-brass: #d4af37;
-  --color-brass-light: #f1d592;
-  --color-cream: #f9f5eb;
-  --color-cream-dim: #ede6d6;
-  --color-velvet-red: #8b0000;
-  --color-text-main: #1a1a1a;
-  --color-text-light: #f9f5eb;
+  --color-deep-woods: #111a11;
+  --color-brass: #c5a059;
+  --color-brass-light: #e6c885;
+  --color-cream: #fdfaf3;
+  --color-cream-dim: #f2ede0;
+  --color-velvet-red: #6d1e1e;
+  --color-text-main: #2c2922;
+  /* Antique Charcoal */
+  --color-text-light: #f4f1ea;
+  /* Warm Cream */
 
   --font-heading: 'Playfair Display', serif;
   --font-subheading: 'Cinzel', serif;
@@ -202,9 +204,9 @@ img {
 
 .item-description {
   margin-top: 1.5rem;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   line-height: 1.8;
-  color: #333;
+  color: var(--color-text-main);
 }
 
 .item-description p {
@@ -212,12 +214,12 @@ img {
 }
 
 .item-price {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--color-brass);
   font-family: var(--font-subheading);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-weight: 700;
-  text-shadow: 0 2px 4px rgba(212, 175, 55, 0.1);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 /* Logo Image */
@@ -345,7 +347,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, rgba(26, 38, 26, 0.4) 0%, rgba(26, 38, 26, 0.9) 100%);
+  background: radial-gradient(circle at center, rgba(17, 26, 17, 0.4) 0%, rgba(17, 26, 17, 0.9) 100%);
   z-index: 1;
 }
 
@@ -675,11 +677,12 @@ img {
   align-items: start;
   padding: 4rem;
   margin-bottom: 4rem;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(253, 250, 243, 0.7);
+  /* Using --color-cream with transparency */
   border-radius: var(--border-radius);
-  border: 1px solid rgba(212, 175, 55, 0.1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(5px);
+  border: 1px solid rgba(197, 160, 89, 0.15);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(8px);
 }
 
 .item-images {
