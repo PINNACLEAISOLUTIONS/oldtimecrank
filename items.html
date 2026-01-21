@@ -133,6 +133,64 @@
                         </div>
                     </article>
 
+                    <hr class="item-divider">
+
+                    <!-- Item 3: Herzog Cabinet -->
+                    <article class="item-row" data-aos="fade-up">
+                        <div class="item-images">
+                            <div class="slideshow-container" id="slideshow-cabinet">
+                                <div class="slide active">
+                                    <img src="./cabinet-1.png" alt="Herzog Cabinet Front View">
+                                </div>
+                                <div class="slide">
+                                    <img src="./cabinet-2.png" alt="Herzog Cabinet Top View">
+                                </div>
+                                <div class="slide">
+                                    <img src="./cabinet-3.png" alt="Herzog Cabinet Side View">
+                                </div>
+                                <div class="slide">
+                                    <img src="./cabinet-4.png" alt="Herzog Cabinet Back View">
+                                </div>
+                                <button class="slide-btn prev" onclick="changeSlide('slideshow-cabinet', -1)">❮</button>
+                                <button class="slide-btn next" onclick="changeSlide('slideshow-cabinet', 1)">❯</button>
+                                <div class="slide-dots">
+                                    <span class="dot active" onclick="goToSlide('slideshow-cabinet', 0)"></span>
+                                    <span class="dot" onclick="goToSlide('slideshow-cabinet', 1)"></span>
+                                    <span class="dot" onclick="goToSlide('slideshow-cabinet', 2)"></span>
+                                    <span class="dot" onclick="goToSlide('slideshow-cabinet', 3)"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-details">
+                            <span class="item-category">Furniture</span>
+                            <h2 class="item-title">Herzog 1/2 Round Oak Cylinder Cabinet</h2>
+                            <div class="item-price">$1,750.00</div>
+                            <div class="item-description">
+                                <p>Up for sale is a beautiful Herzog 1/2 Round Oak Cylinder Cabinet. These cabinets were
+                                    made around 1905 to 1910 by the Herzog Furniture Company based in Saginaw, Michigan.
+                                </p>
+                                <p>This 1/2 round holds approximately 120 two minute or four minute cylinders on
+                                    cardboard tubes. The cabinet has been refinished many years ago and has stunning
+                                    quarter sawn oak veneers. The finish is in very nice condition. The interior still
+                                    retains the original cardboard pegs.</p>
+                                <p>If you have an Edison Triumph or Opera or any oak phonograph that you would like to
+                                    put on this cabinet, it will look magnificent.</p>
+                                <ul class="item-features">
+                                    <li>Holds approximately 120 cylinders</li>
+                                    <li>Stunning quarter sawn oak veneers</li>
+                                    <li>Original cardboard pegs intact</li>
+                                    <li>Dimensions: 33" tall x 19" wide x 19" deep</li>
+                                    <li>Free local pickup available</li>
+                                </ul>
+                                <p class="shipping-note"><strong>Shipping:</strong> $300 in the USA only. Buyer is
+                                    responsible for all shipping costs.</p>
+                                <p class="reviews-note"><a href="https://www.ebay.com/str/oldtimecrank"
+                                        target="_blank"><strong>★★★★★ PLEASE CHECK OUT OUR REVIEWS!</strong></a></p>
+                            </div>
+                            <a href="#contact" class="btn btn-primary">Inquire About This Item</a>
+                        </div>
+                    </article>
+
                 </div>
             </section>
         </main>
@@ -184,6 +242,36 @@
             const isExpanded = mainNav.classList.contains('active');
             menuToggle.setAttribute('aria-expanded', isExpanded);
         });
+
+        // Slideshow Functions
+        function changeSlide(slideshowId, direction) {
+            const container = document.getElementById(slideshowId);
+            const slides = container.querySelectorAll('.slide');
+            const dots = container.querySelectorAll('.dot');
+            let currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+
+            slides[currentIndex].classList.remove('active');
+            dots[currentIndex].classList.remove('active');
+
+            currentIndex += direction;
+            if (currentIndex >= slides.length) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = slides.length - 1;
+
+            slides[currentIndex].classList.add('active');
+            dots[currentIndex].classList.add('active');
+        }
+
+        function goToSlide(slideshowId, index) {
+            const container = document.getElementById(slideshowId);
+            const slides = container.querySelectorAll('.slide');
+            const dots = container.querySelectorAll('.dot');
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
     </script>
 </body>
 
