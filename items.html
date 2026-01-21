@@ -2,126 +2,195 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Old Time Crank | Phonographs & Antiques</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Items For Sale | Old Time Crank</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
-    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
 
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-  <div id="app">
-    <header class="site-header">
-      <div class="container header-inner">
-        <div class="logo">
-          <span class="logo-icon">sf</span>
-          <span class="logo-text">Old Time Crank</span>
-        </div>
-        <nav class="main-nav">
-          <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="items.html">Items For Sale</a></li>
-            <li><a href="#about">Our Story</a></li>
-            <li><a href="#contact" class="btn btn-outline">Contact</a></li>
-          </ul>
-        </nav>
-        <button class="mobile-menu-toggle" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </header>
-
-    <main>
-      <section id="hero" class="hero-section">
-        <div class="hero-bg-overlay"></div>
-        <div class="container hero-content">
-          <h1 class="hero-title" data-aos="fade-up" data-aos-duration="1000">Preserving the <span
-              class="text-accent">Sound</span> of History</h1>
-          <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Exquisite phonographs, rare cylinders, and
-            timeless antiques for the discerning collector.</p>
-          <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
-            <a href="#products" class="btn btn-primary">ITEMS FOR SALE</a>
-            <a href="#about" class="btn btn-text">Learn More &rarr;</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="products" class="products-section">
-        <div class="container">
-          <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title">Curated Collection</h2>
-            <p class="section-desc">Hand-picked treasures from the golden age of audio.</p>
-          </div>
-          <div class="product-grid" id="product-grid" data-aos="fade-up" data-aos-delay="200">
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="about-section">
-        <div class="container about-inner">
-          <div class="about-image" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-            <div class="image-frame">
-              <div class="placeholder-img"></div>
+    <div id="app">
+        <header class="site-header">
+            <div class="container header-inner">
+                <div class="logo">
+                    <span class="logo-icon">sf</span>
+                    <a href="index.html" class="logo-text">Old Time Crank</a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="items.html" class="active">Items For Sale</a></li>
+                        <li><a href="index.html#about">Our Story</a></li>
+                        <li><a href="index.html#contact" class="btn btn-outline">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-          </div>
-          <div class="about-content" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
-            <h2 class="section-title">The Crank Philosophy</h2>
-            <p>At Old Time Crank, we believe that every scratch and patina tells a story. We specialize in restoring and
-              selling authentic Edison phonographs, Victrolas, and rare wax cylinders.</p>
-            <p>Founded by enthusiasts for enthusiasts, we ensure every piece that leaves our shop is in working order,
-              ready to fill your home with the warm, analog sounds of the past.</p>
-            <a href="#contact" class="btn btn-secondary">Visit Our Showroom</a>
-          </div>
-        </div>
-      </section>
-    </main>
+        </header>
 
-    <footer class="site-footer" data-aos="fade-in" data-aos-offset="100">
-      <div class="container footer-inner">
-        <div class="footer-col">
-          <h3>Old Time Crank</h3>
-          <p>Restoring history, one revolution at a time.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="#">Phonographs</a></li>
-            <li><a href="#">Cylinders</a></li>
-            <li><a href="#">Parts & Repair</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Connect</h4>
-          <p>123 Vintage Lane<br>Historyville, USA</p>
-          <p><a href="tel:9546491037">954-649-1037</a></p>
-          <p><a href="mailto:miketpatella@yahoo.com">miketpatella@yahoo.com</a></p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Old Time Crank. All rights reserved.</p>
-      </div>
-    </footer>
-  </div>
+        <main>
+            <!-- Page Header -->
+            <section class="page-hero">
+                <div class="container">
+                    <h1 class="page-title" data-aos="fade-up">Items For Sale</h1>
+                    <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">Discover our curated collection of
+                        antique phonographs, gramophones, and rare audio treasures.</p>
+                </div>
+            </section>
 
-  <script type="module" src="/main.js"></script>
+            <!-- Items Listing -->
+            <section class="items-section">
+                <div class="container">
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      once: true,
-    });
-  </script>
+                    <!-- Item 1: Victor 5 -->
+                    <article class="item-row" data-aos="fade-up">
+                        <div class="item-images">
+                            <div class="main-image">
+                                <img src="./edison-phonograph.png" alt="Victor 5 Gramophone">
+                            </div>
+                            <div class="item-video">
+                                <iframe width="100%" height="280" src="https://www.youtube.com/embed/CPutMaw-y9E?rel=0"
+                                    title="Victor 5 Gramophone Demo" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="item-details">
+                            <span class="item-category">Gramophone</span>
+                            <h2 class="item-title">Victor 5 Gramophone</h2>
+                            <div class="item-price">$2,000.00</div>
+                            <div class="item-description">
+                                <p>The Victor 5 is well known for its handsome quarter sawn oak cabinet and this example
+                                    retains its original finish. All original nickel plating is in excellent shape. The
+                                    triple spring motor runs strong and smooth; it will play several records with ease.
+                                </p>
+                                <p>The backmount has its original striping and is in near mint condition. This machine
+                                    comes with a stunning brass bell horn measuring 19 1/2" across the bell and 29 1/2"
+                                    long. The horn has been professionally straightened and polished; it presents
+                                    beautifully.</p>
+                                <p>The original Victor decal is in nice condition. The only replaced item is the
+                                    turntable felt. The Exhibition reproducer has been rebuilt and plays excellently.
+                                </p>
+                                <p>These machines were produced between 1906 and 1920. This Victor 5 stands as a
+                                    wonderful example of Victor craftsmanship from that era.</p>
+                                <ul class="item-features">
+                                    <li>Original quarter sawn oak cabinet with original finish</li>
+                                    <li>Triple spring motor, runs strong and smooth</li>
+                                    <li>Brass bell horn (19 1/2" x 29 1/2"), professionally polished</li>
+                                    <li>Exhibition reproducer, rebuilt and plays excellently</li>
+                                    <li>Includes several acoustic records</li>
+                                    <li>Includes new old stock needle tin with 200 needles</li>
+                                </ul>
+                            </div>
+                            <a href="#contact" class="btn btn-primary">Inquire About This Item</a>
+                        </div>
+                    </article>
+
+                    <hr class="item-divider">
+
+                    <!-- Item 2: Indestructible Cylinder -->
+                    <article class="item-row" data-aos="fade-up">
+                        <div class="item-images">
+                            <div class="main-image">
+                                <img src="./cylinder.png" alt="2 Minute Indestructible Cylinder">
+                            </div>
+                        </div>
+                        <div class="item-details">
+                            <span class="item-category">Media</span>
+                            <h2 class="item-title">Uncle Josh's 2nd Visit to New York - 2 Minute Indestructible Cylinder
+                            </h2>
+                            <div class="item-price">$50.00</div>
+                            <div class="item-description">
+                                <p>Up for sale is an early 2 minute Indestructible cylinder featuring "Uncle Josh's 2nd
+                                    Visit to New York" by Stewart.</p>
+                                <p>This cylinder plays very good - loud and clear. A wonderful addition to any
+                                    phonograph collection.</p>
+                                <ul class="item-features">
+                                    <li>2 Minute Indestructible format</li>
+                                    <li>Song: Uncle Josh's 2nd Visit to New York</li>
+                                    <li>Artist: Stewart</li>
+                                    <li>Plays loud and clear</li>
+                                    <li>Includes original case</li>
+                                </ul>
+                                <p class="shipping-note"><strong>Shipping:</strong> $16 in the USA only (varies by
+                                    state)</p>
+                            </div>
+                            <a href="#contact" class="btn btn-primary">Inquire About This Item</a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer" data-aos="fade-in" data-aos-offset="100">
+            <div class="container footer-inner">
+                <div class="footer-col">
+                    <h3>Old Time Crank</h3>
+                    <p>Restoring history, one revolution at a time.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#">Phonographs</a></li>
+                        <li><a href="#">Cylinders</a></li>
+                        <li><a href="#">Parts & Repair</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <p>123 Vintage Lane<br>Historyville, USA</p>
+                    <p><a href="tel:9546491037">954-649-1037</a></p>
+                    <p><a href="mailto:miketpatella@yahoo.com">miketpatella@yahoo.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Old Time Crank. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+
+        menuToggle.addEventListener('click', () => {
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+
+            if (mainNav.style.display === 'block') {
+                mainNav.style.display = 'none';
+            } else {
+                mainNav.style.display = 'block';
+                mainNav.style.position = 'absolute';
+                mainNav.style.top = '100%';
+                mainNav.style.left = '0';
+                mainNav.style.width = '100%';
+                mainNav.style.background = '#1a261a';
+                mainNav.style.padding = '1rem';
+            }
+        });
+    </script>
 </body>
 
 </html>
