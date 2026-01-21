@@ -253,6 +253,16 @@ img {
   .mobile-menu-toggle {
     display: block;
   }
+
+  .logo-img {
+    height: 35px;
+    /* Smaller logo for mobile */
+  }
+
+  .logo {
+    font-size: 1.2rem;
+    /* Slightly smaller text for mobile */
+  }
 }
 
 /* Hero */
@@ -452,6 +462,13 @@ img {
   background-image: url('https://images.unsplash.com/photo-1507676184212-d03ab07a11d0?q=80&w=2069&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
+}
+
+.about-banner {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto 2rem;
+  border-radius: 8px;
 }
 
 .about-content p {
