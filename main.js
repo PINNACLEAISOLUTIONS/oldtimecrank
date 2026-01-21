@@ -31,35 +31,63 @@ const products = [
   }
 ];
 
-document.querySelector('#product-grid').innerHTML = products.map(product => `
-  <div class="product-card">
-    <div class="product-image">
-      <img src="${product.image}" alt="${product.title}">
+const productGrid = document.querySelector('#product-grid');
+if (productGrid) {
+  productGrid.innerHTML = products.map(product => `
+    <div class="product-card">
+      <div class="product-image">
+        <img src="${product.image}" alt="${product.title}">
+      </div>
+      <div class="product-info">
+        <span class="product-category">${product.category}</span>
+        <h3 class="product-title">${product.title}</h3>
+        <div class="product-price">${product.price}</div>
+      </div>
     </div>
-    <div class="product-info">
-      <span class="product-category">${product.category}</span>
-      <h3 class="product-title">${product.title}</h3>
-      <div class="product-price">${product.price}</div>
-    </div>
-  </div>
-`).join('');
+  `).join('');
+}
 
 // Simple Mobile Menu Toggle
 const menuToggle = document.querySelector('.mobile-menu-toggle');
 const mainNav = document.querySelector('.main-nav');
 
-menuToggle.addEventListener('click', () => {
-  mainNav.classList.toggle('active');
-  const isExpanded = mainNav.classList.contains('active');
-  menuToggle.setAttribute('aria-expanded', isExpanded);
-});
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+    const isExpanded = mainNav.classList.contains('active');
+    menuToggle.setAttribute('aria-expanded', isExpanded);
+  });
+}
 
-// Smooth Scroll for Anchor Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+// Page Transitions & Smooth Scroll
+document.addEventListener('click', e => {
+  const link = e.target.closest('a');
+  if (!link) return;
+
+  // Smooth Scroll for Anchor Links
+  if (link.hash && link.pathname === window.location.pathname) {
+    e.preventDefault();
+    const target = document.querySelector(link.hash);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  // Page Transitions for Internal Links
+  else if (
+    link.hostname === window.location.hostname &&
+    !link.hash &&
+    link.target !== '_blank'
+  ) {
+    e.preventDefault();
+    const destination = link.href;
+    const app = document.querySelector('#app');
+    if (app) {
+      app.classList.add('page-exit');
+      setTimeout(() => {
+        window.location.href = destination;
+      }, 500);
+    } else {
+      window.location.href = destination;
+    }
+  }
 });

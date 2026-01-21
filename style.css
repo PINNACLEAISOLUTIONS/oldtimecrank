@@ -59,6 +59,22 @@ body {
   }
 }
 
+.page-exit {
+  animation: pageSlideOut 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes pageSlideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+}
+
 h1,
 h2,
 h3,
@@ -184,6 +200,26 @@ img {
   font-weight: 700;
 }
 
+.item-description {
+  margin-top: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.item-description p {
+  margin-bottom: 1.2rem;
+}
+
+.item-price {
+  font-size: 2rem;
+  color: var(--color-brass);
+  font-family: var(--font-subheading);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(212, 175, 55, 0.1);
+}
+
 /* Logo Image */
 .logo-img {
   height: 50px;
@@ -282,8 +318,8 @@ img {
   }
 
   .logo-img {
-    height: 35px;
-    /* Smaller logo for mobile */
+    height: 55px;
+    /* Increased 40% as requested */
   }
 
   .logo {
@@ -494,8 +530,25 @@ img {
 .about-banner {
   display: block;
   max-width: 100%;
-  margin: 0 auto 2rem;
-  border-radius: 8px;
+  width: 100%;
+  /* Ensure it spans well */
+  margin: 0 auto 3rem;
+  border-radius: 12px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+  border: 4px solid #ffcc00;
+  /* Professional Yellow/Gold border */
+  padding: 5px;
+  /* Slight offset for the border */
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.intro-text {
+  font-size: 1.4rem;
+  font-family: var(--font-subheading);
+  color: var(--color-brass);
+  margin-bottom: 2rem;
+  font-style: italic;
+  line-height: 1.4;
 }
 
 .about-content p {
@@ -599,15 +652,34 @@ img {
 /* Items Section */
 .items-section {
   padding: var(--spacing-xl) 0;
-  background-color: var(--color-cream);
+  background: radial-gradient(circle at center, var(--color-cream) 0%, var(--color-cream-dim) 100%);
+  position: relative;
+}
+
+.items-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .item-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 4rem;
   align-items: start;
-  padding: var(--spacing-lg) 0;
+  padding: 4rem;
+  margin-bottom: 4rem;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(5px);
 }
 
 .item-images {
