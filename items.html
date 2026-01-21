@@ -3,9 +3,21 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Items For Sale | Old Time Crank</title>
+    <title>Antique Phonographs & Record Cabinets For Sale | Old Time Crank</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Browse our collection of antique phonographs, Edison cylinder players, Victor gramophones, and vintage record cabinets for sale. Quality restorations, shipping available.">
+    <meta name="keywords"
+        content="antique phonograph for sale, Edison phonograph, Victor gramophone, cylinder records, vintage record cabinet, buy antique phonograph, Edison cylinder player">
+    <meta name="author" content="Old Time Crank">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://oldtimecrank.com/items.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +28,71 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <link rel="stylesheet" href="./style.css">
+
+    <!-- Structured Data - ItemList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Antique Phonographs & Record Cabinets For Sale",
+      "description": "Quality antique phonographs, Edison cylinder players, and vintage record cabinets",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "Product",
+          "position": 1,
+          "name": "Victor 5 Phonograph",
+          "description": "Quarter sawn oak cabinet with nickel plating, triple spring motor, brass bell horn",
+          "offers": {
+            "@type": "Offer",
+            "price": "2000.00",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 2,
+          "name": "Indestructible Cylinder - Uncle Josh",
+          "offers": {
+            "@type": "Offer",
+            "price": "50.00",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 3,
+          "name": "Herzog 1/2 Round Oak Cylinder Cabinet",
+          "offers": {
+            "@type": "Offer",
+            "price": "1750.00",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 4,
+          "name": "Salter Quarter Round Record Cabinet",
+          "offers": {
+            "@type": "Offer",
+            "price": "1900.00",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 5,
+          "name": "Edison Banner Home Phonograph with All Brass Horn",
+          "offers": {
+            "@type": "Offer",
+            "price": "900.00",
+            "priceCurrency": "USD"
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -23,7 +100,7 @@
         <header class="site-header">
             <div class="container header-inner">
                 <div class="logo">
-                    <span class="logo-icon">sf</span>
+                    <a href="index.html"><img src="./logo.png" alt="Old Time Crank" class="logo-img"></a>
                     <a href="index.html" class="logo-text">Old Time Crank</a>
                 </div>
                 <nav class="main-nav">
