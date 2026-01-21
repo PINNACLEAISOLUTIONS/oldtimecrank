@@ -157,7 +157,16 @@ img {
   font-weight: 700;
 }
 
+/* Logo Image */
+.logo-img {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
 .logo-icon {
+  display: none;
+  /* Hiding the old icon since we use image now */
   font-family: 'Playfair Display', serif;
   font-style: italic;
   border: 2px solid var(--color-brass);
