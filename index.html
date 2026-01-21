@@ -95,7 +95,7 @@
               Every piece is serviced, tested, and ready to play so history
               lives on through sound.
             </p>
-            <a href="#contact" class="btn btn-secondary">Visit Our Showroom</a>
+            <a href="items.html" class="btn btn-secondary">Visit Our Showroom</a>
           </div>
         </div>
       </section>
@@ -154,6 +154,16 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ once: true });
+
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+      const isExpanded = mainNav.classList.contains('active');
+      menuToggle.setAttribute('aria-expanded', isExpanded);
+    });
   </script>
 
 </body>
