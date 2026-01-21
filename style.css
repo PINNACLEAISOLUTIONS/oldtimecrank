@@ -2,8 +2,10 @@
   --color-deep-woods: #111a11;
   --color-brass: #c5a059;
   --color-brass-light: #e6c885;
-  --color-cream: #fdfaf3;
-  --color-cream-dim: #f2ede0;
+  --color-cream: #f2ede0;
+  /* Warmer Beige */
+  --color-cream-dim: #e6dfcd;
+  /* Darker Beige */
   --color-velvet-red: #6d1e1e;
   --color-text-main: #2c2922;
   /* Antique Charcoal */
@@ -654,7 +656,7 @@ img {
 /* Items Section */
 .items-section {
   padding: var(--spacing-xl) 0;
-  background: radial-gradient(circle at center, var(--color-cream) 0%, var(--color-cream-dim) 100%);
+  background: linear-gradient(to bottom, var(--color-cream) 0%, var(--color-cream-dim) 50%, #dad2bc 100%);
   position: relative;
 }
 
@@ -677,8 +679,8 @@ img {
   align-items: start;
   padding: 4rem;
   margin-bottom: 4rem;
-  background: rgba(253, 250, 243, 0.7);
-  /* Using --color-cream with transparency */
+  background: rgba(255, 255, 255, 0.6);
+  /* Slightly more opaque card */
   border-radius: var(--border-radius);
   border: 1px solid rgba(197, 160, 89, 0.15);
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
