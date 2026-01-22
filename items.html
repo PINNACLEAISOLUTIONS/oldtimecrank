@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -97,6 +97,45 @@
 
 <body>
     <div id="app">
+        <!-- SVG Filters for Electric Border -->
+        <svg class="svg-container" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+            <defs>
+                <filter id="turbulent-displace" colorInterpolationFilters="sRGB" x="-20%" y="-20%" width="140%"
+                    height="140%">
+                    <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise1" seed="1" />
+                    <feOffset in="noise1" dx="0" dy="0" result="offsetNoise1">
+                        <animate attributeName="dy" values="700; 0" dur="6s" repeatCount="indefinite"
+                            calcMode="linear" />
+                    </feOffset>
+
+                    <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise2" seed="1" />
+                    <feOffset in="noise2" dx="0" dy="0" result="offsetNoise2">
+                        <animate attributeName="dy" values="0; -700" dur="6s" repeatCount="indefinite"
+                            calcMode="linear" />
+                    </feOffset>
+
+                    <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise1" seed="2" />
+                    <feOffset in="noise1" dx="0" dy="0" result="offsetNoise3">
+                        <animate attributeName="dx" values="490; 0" dur="6s" repeatCount="indefinite"
+                            calcMode="linear" />
+                    </feOffset>
+
+                    <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise2" seed="2" />
+                    <feOffset in="noise2" dx="0" dy="0" result="offsetNoise4">
+                        <animate attributeName="dx" values="0; -490" dur="6s" repeatCount="indefinite"
+                            calcMode="linear" />
+                    </feOffset>
+
+                    <feComposite in="offsetNoise1" in2="offsetNoise2" result="part1" />
+                    <feComposite in="offsetNoise3" in2="offsetNoise4" result="part2" />
+                    <feBlend in="part1" in2="part2" mode="color-dodge" result="combinedNoise" />
+
+                    <feDisplacementMap in="SourceGraphic" in2="combinedNoise" scale="30" xChannelSelector="R"
+                        yChannelSelector="B" />
+                </filter>
+            </defs>
+        </svg>
+
         <header class="site-header">
             <div class="container header-inner">
                 <div class="logo">
@@ -105,10 +144,14 @@
                 </div>
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="items.html" class="active">Items For Sale</a></li>
-                        <li><a href="index.html#about">Our Story</a></li>
-                        <li><a href="index.html#contact" class="btn btn-outline">Contact</a></li>
+                        <li><a href="index.html"><span></span><span></span><span></span><span></span>Home</a></li>
+                        <li><a href="items.html"
+                                class="active"><span></span><span></span><span></span><span></span>Items For Sale</a>
+                        </li>
+                        <li><a href="index.html#about"><span></span><span></span><span></span><span></span>Our Story</a>
+                        </li>
+                        <li><a href="index.html#contact" class="btn btn-outline" style="padding: 10px 20px;">Contact</a>
+                        </li>
                     </ul>
                 </nav>
                 <button class="mobile-menu-toggle" aria-label="Toggle menu">
@@ -534,12 +577,6 @@
                         <li><a href="items.html">Items For Sale</a></li>
                         <li><a href="https://www.ebay.com/str/oldtimecrank" target="_blank">Our eBay Reviews</a></li>
                     </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Connect</h4>
-                    <p>Fort White, FL</p>
-                    <p><a href="tel:9546491037">954-649-1037</a></p>
-                    <p><a href="mailto:oldtimecrank@gmail.com">oldtimecrank@gmail.com</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
