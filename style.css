@@ -857,8 +857,9 @@ img {
 
 .main-image {
   position: relative;
-  border: 4px solid var(--electric-border-color);
-  overflow: visible;
+  outline: 4px solid var(--electric-border-color);
+  outline-offset: 0px;
+  overflow: hidden;
   border-radius: var(--border-radius);
   background-color: #1a1a1a;
   box-shadow:
@@ -888,7 +889,6 @@ img {
   height: 400px;
   object-fit: cover;
   transition: transform 0.5s ease;
-  filter: url(#turbulent-displace);
 }
 
 .main-image:hover img {
@@ -935,9 +935,10 @@ img {
 /* Image Slideshow - with Electric Border Effect */
 .slideshow-container {
   position: relative;
-  border: 4px solid var(--electric-border-color);
+  outline: 4px solid var(--electric-border-color);
+  outline-offset: 0px;
   border-radius: var(--border-radius);
-  overflow: visible;
+  overflow: hidden;
   background: #000;
   box-shadow:
     0 0 15px var(--electric-glow),
@@ -960,10 +961,6 @@ img {
   pointer-events: none;
   animation: electricGlow 2s ease-in-out infinite alternate;
   z-index: -1;
-}
-
-.slideshow-container .slide img {
-  filter: url(#turbulent-displace);
 }
 
 .slide {
@@ -1418,7 +1415,6 @@ img {
 .card-container img,
 .card-container .slideshow-container {
   border: 2px solid var(--electric-border-color);
-  filter: url(#turbulent-displace);
   z-index: 3;
   position: relative;
 }
