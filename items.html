@@ -131,341 +131,394 @@
 
             <!-- Items Listing -->
             <section class="items-section">
-                <div class="container">
-
-                    <!-- Item 1: Victor 5 -->
-                    <article class="item-row" data-aos="fade-up">
-                        <div class="item-images">
-                            <div class="main-image">
-                                <img src="./edison-phonograph.png" alt="Victor 5 Phonograph">
-                            </div>
-                            <div class="item-video">
-                                <iframe width="100%" height="280" src="https://www.youtube.com/embed/CPutMaw-y9E?rel=0"
-                                    title="Victor 5 Phonograph Demo" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="item-details">
-                            <span class="item-category">Phonograph</span>
-                            <h2 class="item-title">Victor 5 Phonograph</h2>
-                            <div class="item-price">$2,000.00</div>
-                            <div class="item-description">
-                                <p>The Victor 5 is well known for its handsome quarter sawn oak cabinet and this example
-                                    retains its original finish. All original nickel plating is in excellent shape. The
-                                    triple spring motor runs strong and smooth; it will play several records with ease.
-                                </p>
-                                <p>The backmount has its original striping and is in near mint condition. This machine
-                                    comes with a stunning brass bell horn measuring 19 1/2" across the bell and 29 1/2"
-                                    long. The horn has been professionally straightened and polished; it presents
-                                    beautifully.</p>
-                                <p>The original Victor decal is in nice condition. The only replaced item is the
-                                    turntable felt. The Exhibition reproducer has been rebuilt and plays excellently.
-                                </p>
-                                <p>These machines were produced between 1906 and 1920. This Victor 5 stands as a
-                                    wonderful example of Victor craftsmanship from that era.</p>
-                                <ul class="item-features">
-                                    <li>Original quarter sawn oak cabinet with original finish</li>
-                                    <li>Triple spring motor, runs strong and smooth</li>
-                                    <li>Brass bell horn (19 1/2" x 29 1/2"), professionally polished</li>
-                                    <li>Exhibition reproducer, rebuilt and plays excellently</li>
-                                    <li>Includes several acoustic records</li>
-                                    <li>Includes new old stock needle tin with 200 needles</li>
+                <div class="container items-layout">
+                    <!-- Sidebar Navigation -->
+                    <aside class="items-sidebar">
+                        <div class="sidebar-inner">
+                            <h3 class="sidebar-title">Collection</h3>
+                            <nav class="sidebar-nav">
+                                <ul>
+                                    <li><a href="#victor5">Victor 5 Phonograph</a></li>
+                                    <li><a href="#cylinder">Uncle Josh Cylinder</a></li>
+                                    <li><a href="#herzog">Herzog Oak Cabinet</a></li>
+                                    <li><a href="#salter">Salter Record Cabinet</a></li>
+                                    <li><a href="#edison">Edison Banner Home</a></li>
+                                    <li><a href="#victrola14">Victrola 14 Oak</a></li>
                                 </ul>
-                            </div>
-
+                            </nav>
                         </div>
-                    </article>
+                    </aside>
 
-                    <hr class="item-divider">
+                    <div class="items-grid">
 
-                    <!-- Item 2: Indestructible Cylinder -->
-                    <article class="item-row" data-aos="fade-up">
-                        <div class="item-images">
-                            <div class="main-image">
-                                <img src="./cylinder.png" alt="2 Minute Indestructible Cylinder">
-                            </div>
-                        </div>
-                        <div class="item-details">
-                            <span class="item-category">Media</span>
-                            <h2 class="item-title">Uncle Josh's 2nd Visit to New York - 2 Minute Indestructible Cylinder
-                            </h2>
-                            <div class="item-price">$50.00</div>
-                            <div class="item-description">
-                                <p>Up for sale is an early 2 minute Indestructible cylinder featuring "Uncle Josh's 2nd
-                                    Visit to New York" by Stewart.</p>
-                                <p>This cylinder plays very good - loud and clear. A wonderful addition to any
-                                    phonograph collection.</p>
-                                <ul class="item-features">
-                                    <li>2 Minute Indestructible format</li>
-                                    <li>Song: Uncle Josh's 2nd Visit to New York</li>
-                                    <li>Artist: Stewart</li>
-                                    <li>Plays loud and clear</li>
-                                    <li>Includes original case</li>
-                                </ul>
-                                <p class="shipping-note"><strong>Shipping:</strong> $16 in the USA only (varies by
-                                    state)</p>
-                            </div>
-
-                        </div>
-                    </article>
-
-                    <hr class="item-divider">
-
-                    <!-- Item 3: Herzog Cabinet -->
-                    <article class="item-row" data-aos="fade-up">
-                        <div class="item-images">
-                            <div class="slideshow-container" id="slideshow-cabinet">
-                                <div class="slide active">
-                                    <img src="./cabinet-1.png" alt="Herzog Cabinet Front View">
+                        <!-- Item 1: Victor 5 -->
+                        <article id="victor5" class="item-row" data-aos="fade-up">
+                            <div class="item-images">
+                                <div class="main-image">
+                                    <img src="./edison-phonograph.png" alt="Victor 5 Phonograph">
                                 </div>
-                                <div class="slide">
-                                    <img src="./cabinet-2.png" alt="Herzog Cabinet Top View">
-                                </div>
-                                <div class="slide">
-                                    <img src="./cabinet-3.png" alt="Herzog Cabinet Side View">
-                                </div>
-                                <div class="slide">
-                                    <img src="./cabinet-4.png" alt="Herzog Cabinet Back View">
-                                </div>
-                                <button class="slide-btn prev" onclick="changeSlide('slideshow-cabinet', -1)">❮</button>
-                                <button class="slide-btn next" onclick="changeSlide('slideshow-cabinet', 1)">❯</button>
-                                <div class="slide-dots">
-                                    <span class="dot active" onclick="goToSlide('slideshow-cabinet', 0)"></span>
-                                    <span class="dot" onclick="goToSlide('slideshow-cabinet', 1)"></span>
-                                    <span class="dot" onclick="goToSlide('slideshow-cabinet', 2)"></span>
-                                    <span class="dot" onclick="goToSlide('slideshow-cabinet', 3)"></span>
+                                <div class="item-video">
+                                    <iframe width="100%" height="280"
+                                        src="https://www.youtube.com/embed/CPutMaw-y9E?rel=0"
+                                        title="Victor 5 Phonograph Demo" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item-details">
-                            <span class="item-category">Furniture</span>
-                            <h2 class="item-title">Herzog 1/2 Round Oak Cylinder Cabinet</h2>
-                            <div class="item-price">$1,750.00</div>
-                            <div class="item-description">
-                                <p>Up for sale is a beautiful Herzog 1/2 Round Oak Cylinder Cabinet. These cabinets were
-                                    made around 1905 to 1910 by the Herzog Furniture Company based in Saginaw, Michigan.
-                                </p>
-                                <p>This 1/2 round holds approximately 120 two minute or four minute cylinders on
-                                    cardboard tubes. The cabinet has been refinished many years ago and has stunning
-                                    quarter sawn oak veneers. The finish is in very nice condition. The interior still
-                                    retains the original cardboard pegs.</p>
-                                <p>If you have an Edison Triumph or Opera or any oak phonograph that you would like to
-                                    put on this cabinet, it will look magnificent.</p>
-                                <ul class="item-features">
-                                    <li>Holds approximately 120 cylinders</li>
-                                    <li>Stunning quarter sawn oak veneers</li>
-                                    <li>Original cardboard pegs intact</li>
-                                    <li>Dimensions: 33" tall x 19" wide x 19" deep</li>
-                                    <li>Free local pickup available</li>
-                                </ul>
-                                <p class="shipping-note"><strong>Shipping:</strong> $300 in the USA only. Buyer is
-                                    responsible for all shipping costs.</p>
-                                <p class="reviews-note"><a href="https://www.ebay.com/str/oldtimecrank"
-                                        target="_blank"><strong>★★★★★ PLEASE CHECK OUT OUR REVIEWS!</strong></a></p>
+                            <div class="item-details">
+                                <span class="item-category">Phonograph</span>
+                                <h2 class="item-title">Victor 5 Phonograph</h2>
+                                <div class="item-price">$2,000.00</div>
+                                <div class="item-description">
+                                    <p>The Victor 5 is well known for its handsome quarter sawn oak cabinet and this
+                                        example
+                                        retains its original finish. All original nickel plating is in excellent shape.
+                                        The
+                                        triple spring motor runs strong and smooth; it will play several records with
+                                        ease.
+                                    </p>
+                                    <p>The backmount has its original striping and is in near mint condition. This
+                                        machine
+                                        comes with a stunning brass bell horn measuring 19 1/2" across the bell and 29
+                                        1/2"
+                                        long. The horn has been professionally straightened and polished; it presents
+                                        beautifully.</p>
+                                    <p>The original Victor decal is in nice condition. The only replaced item is the
+                                        turntable felt. The Exhibition reproducer has been rebuilt and plays
+                                        excellently.
+                                    </p>
+                                    <p>These machines were produced between 1906 and 1920. This Victor 5 stands as a
+                                        wonderful example of Victor craftsmanship from that era.</p>
+                                    <ul class="item-features">
+                                        <li>Original quarter sawn oak cabinet with original finish</li>
+                                        <li>Triple spring motor, runs strong and smooth</li>
+                                        <li>Brass bell horn (19 1/2" x 29 1/2"), professionally polished</li>
+                                        <li>Exhibition reproducer, rebuilt and plays excellently</li>
+                                        <li>Includes several acoustic records</li>
+                                        <li>Includes new old stock needle tin with 200 needles</li>
+                                    </ul>
+                                </div>
+
                             </div>
+                        </article>
 
-                        </div>
-                    </article>
+                        <hr class="item-divider">
 
-                    <hr class="item-divider">
-
-                    <!-- Item 4: Salter Record Cabinet -->
-                    <article class="item-row" data-aos="fade-up">
-                        <div class="item-images">
-                            <div class="slideshow-container" id="slideshow-salter">
-                                <div class="slide active">
-                                    <img src="./salter-1.png" alt="Salter Cabinet Front View">
-                                </div>
-                                <div class="slide">
-                                    <img src="./salter-2.png" alt="Salter Cabinet Angle View">
-                                </div>
-                                <div class="slide">
-                                    <img src="./salter-3.png" alt="Salter Cabinet Detail">
-                                </div>
-                                <div class="slide">
-                                    <img src="./salter-4.png" alt="Salter Cabinet Interior">
-                                </div>
-                                <div class="slide">
-                                    <img src="./salter-5.png" alt="Salter Cabinet Side View">
-                                </div>
-                                <button class="slide-btn prev" onclick="changeSlide('slideshow-salter', -1)">❮</button>
-                                <button class="slide-btn next" onclick="changeSlide('slideshow-salter', 1)">❯</button>
-                                <div class="slide-dots">
-                                    <span class="dot active" onclick="goToSlide('slideshow-salter', 0)"></span>
-                                    <span class="dot" onclick="goToSlide('slideshow-salter', 1)"></span>
-                                    <span class="dot" onclick="goToSlide('slideshow-salter', 2)"></span>
-                                    <span class="dot" onclick="goToSlide('slideshow-salter', 3)"></span>
-                                    <span class="dot" onclick="goToSlide('slideshow-salter', 4)"></span>
+                        <!-- Item 2: Indestructible Cylinder -->
+                        <article id="cylinder" class="item-row" data-aos="fade-up">
+                            <div class="item-images">
+                                <div class="main-image">
+                                    <img src="./cylinder.png" alt="2 Minute Indestructible Cylinder">
                                 </div>
                             </div>
-                        </div>
-                        <div class="item-details">
-                            <span class="item-category">Furniture</span>
-                            <h2 class="item-title">Salter Quarter Round Record Cabinet</h2>
-                            <div class="item-price">$1,900.00</div>
-                            <div class="item-description">
-                                <p>This is a great cabinet made by the Salter Furniture Company. There were many record
-                                    cabinets made around the early 1900's but very few of this style.</p>
-                                <p>It is called a Quarter Round because of its very narrow construction, measuring only
-                                    16 1/2" wide and 18" deep. Also a little taller than most at 37 3/4" high. The top
-                                    measures 17 1/4" x 20" deep.</p>
-                                <p>The cabinet has a new interior that has been done with 14 new vertical slots to hold
-                                    either 10 inch or 12 inch records. The cabinet has been professionally restored and
-                                    has stunning red and black mahogany striped veneer on the curved front door.</p>
-                                <p>Cabinet also has beautiful corner columns on each side with hand carving above each
-                                    column. The Salter Record Cabinet would make a great combination with a Victor 6 or
-                                    a Victor 4 sitting on top of it.</p>
-                                <ul class="item-features">
-                                    <li>Rare quarter round style cabinet</li>
-                                    <li>Dimensions: 37 3/4" tall x 16 1/2" wide x 18" deep</li>
-                                    <li>Top measures 17 1/4" x 20" deep</li>
-                                    <li>14 vertical slots for 10" or 12" records</li>
-                                    <li>Professionally restored</li>
-                                    <li>Stunning red and black mahogany striped veneer</li>
-                                    <li>Hand-carved corner columns</li>
-                                </ul>
-                                <p class="shipping-note"><strong>Shipping:</strong> $300 in the USA only.</p>
-                                <p class="reviews-note"><a href="https://www.ebay.com/str/oldtimecrank"
-                                        target="_blank"><strong>★★★★★ PLEASE CHECK OUT OUR REVIEWS!</strong></a></p>
+                            <div class="item-details">
+                                <span class="item-category">Media</span>
+                                <h2 class="item-title">Uncle Josh's 2nd Visit to New York - 2 Minute Indestructible
+                                    Cylinder
+                                </h2>
+                                <div class="item-price">$50.00</div>
+                                <div class="item-description">
+                                    <p>Up for sale is an early 2 minute Indestructible cylinder featuring "Uncle Josh's
+                                        2nd
+                                        Visit to New York" by Stewart.</p>
+                                    <p>This cylinder plays very good - loud and clear. A wonderful addition to any
+                                        phonograph collection.</p>
+                                    <ul class="item-features">
+                                        <li>2 Minute Indestructible format</li>
+                                        <li>Song: Uncle Josh's 2nd Visit to New York</li>
+                                        <li>Artist: Stewart</li>
+                                        <li>Plays loud and clear</li>
+                                        <li>Includes original case</li>
+                                    </ul>
+                                    <p class="shipping-note"><strong>Shipping:</strong> $16 in the USA only (varies by
+                                        state)</p>
+                                </div>
+
                             </div>
+                        </article>
 
-                        </div>
-                    </article>
+                        <hr class="item-divider">
 
-                    <hr class="item-divider">
-
-                    <!-- Item 5: Edison Banner Home Phonograph -->
-                    <article class="item-row" data-aos="fade-up">
-                        <div class="item-images">
-                            <div class="slideshow-container" id="slideshow-edison-banner">
-                                <div class="slide active">
-                                    <img src="./edison-banner-1.png"
-                                        alt="Edison Banner Home Phonograph with Brass Horn">
-                                </div>
-                                <div class="slide">
-                                    <img src="./edison-banner-2.png" alt="Edison Banner Home Phonograph Detail">
-                                </div>
-                                <button class="slide-btn prev"
-                                    onclick="changeSlide('slideshow-edison-banner', -1)">❮</button>
-                                <button class="slide-btn next"
-                                    onclick="changeSlide('slideshow-edison-banner', 1)">❯</button>
-                                <div class="slide-dots">
-                                    <span class="dot active" onclick="goToSlide('slideshow-edison-banner', 0)"></span>
-                                    <span class="dot" onclick="goToSlide('slideshow-edison-banner', 1)"></span>
-                                </div>
-                            </div>
-                            <div class="item-video">
-                                <iframe width="100%" height="280" src="https://www.youtube.com/embed/ACTwnEjGVfI?rel=0"
-                                    title="Edison Banner Home Phonograph Demo" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="item-details">
-                            <span class="item-category">Phonograph</span>
-                            <h2 class="item-title">Edison Banner Home Phonograph with All Brass Horn</h2>
-                            <div class="item-price">$900.00</div>
-                            <div class="item-description">
-                                <p>Up for sale is an Edison Model A Banner Home Phonograph, made about 1901 to 1905.
-                                    This machine is all original with a beautiful original finish, original crank, and
-                                    original bedplate.</p>
-                                <p>Features a backmounted early crane with a 30" early style all brass horn. Comes with
-                                    4 two minute cylinders. Looks and plays great!</p>
-                                <p>These machines are hard to find with this combination of early brass horn and
-                                    backmount.</p>
-                                <ul class="item-features">
-                                    <li>All original Edison Model A</li>
-                                    <li>Beautiful original finish</li>
-                                    <li>Original crank and bedplate</li>
-                                    <li>30" early style all brass horn</li>
-                                    <li>Backmounted early crane</li>
-                                    <li>Includes 4 two minute cylinders</li>
-                                    <li>Looks and plays great</li>
-                                </ul>
-                                <p class="shipping-note"><strong>Shipping:</strong> $175 in the USA only.</p>
-                                <p class="reviews-note"><a href="https://www.ebay.com/str/oldtimecrank"
-                                        target="_blank"><strong>★★★★★ PLEASE CHECK OUT OUR REVIEWS!</strong></a></p>
-                            </div>
-
-                        </div>
-                    </article>
-
-                    <hr class="item-divider">
-
-                    <!-- Item 6: Victrola 14 in Oak -->
-                    <article class="item-row" data-aos="fade-up">
-                        <div class="item-images">
-                            <div class="slideshow-container" id="slideshow-victrola14">
-                                <div class="slide active">
-                                    <img src="./victrola-oak-1.png" alt="Victrola 14 in Oak - Front View">
-                                </div>
-                                <div class="slide">
-                                    <img src="./victrola-oak-2.png" alt="Victrola 14 in Oak - Detail">
-                                </div>
-                                <div class="slide">
-                                    <img src="./victrola-oak-3.png" alt="Victrola 14 in Oak - Full Profile">
-                                </div>
-                                <div class="slide">
-                                    <img src="./victrola-oak-4.png" alt="Victrola 14 in Oak - Interior">
-                                </div>
-                                <div class="slide">
-                                    <img src="./victrola-oak-5.png" alt="Victrola 14 in Oak - Rear Profile">
-                                </div>
-                                <button class="slide-btn prev"
-                                    onclick="changeSlide('slideshow-victrola14', -1)">❮</button>
-                                <button class="slide-btn next"
-                                    onclick="changeSlide('slideshow-victrola14', 1)">❯</button>
-                                <div class="slide-dots">
-                                    <span class="dot active" onclick="goToSlide('slideshow-victrola14', 0)"></span>
-                                    <span class="dot" onclick="goToSlide('slideshow-victrola14', 1)"></span>
-                                    <span class="dot" onclick="goToSlide('slideshow-victrola14', 2)"></span>
-                                    <span class="dot" onclick="goToSlide('slideshow-victrola14', 3)"></span>
-                                    <span class="dot" onclick="goToSlide('slideshow-victrola14', 4)"></span>
+                        <!-- Item 3: Herzog Cabinet -->
+                        <article id="herzog" class="item-row" data-aos="fade-up">
+                            <div class="item-images">
+                                <div class="slideshow-container" id="slideshow-cabinet">
+                                    <div class="slide active">
+                                        <img src="./cabinet-1.png" alt="Herzog Cabinet Front View">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./cabinet-2.png" alt="Herzog Cabinet Top View">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./cabinet-3.png" alt="Herzog Cabinet Side View">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./cabinet-4.png" alt="Herzog Cabinet Back View">
+                                    </div>
+                                    <button class="slide-btn prev"
+                                        onclick="changeSlide('slideshow-cabinet', -1)">❮</button>
+                                    <button class="slide-btn next"
+                                        onclick="changeSlide('slideshow-cabinet', 1)">❯</button>
+                                    <div class="slide-dots">
+                                        <span class="dot active" onclick="goToSlide('slideshow-cabinet', 0)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-cabinet', 1)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-cabinet', 2)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-cabinet', 3)"></span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="item-video">
-                                <iframe width="100%" height="280" src="https://www.youtube.com/embed/NJts5HeZqoc?rel=0"
-                                    title="Victrola 14 in Oak Demo" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="item-details">
-                            <span class="item-category">Phonograph</span>
-                            <h2 class="item-title">Victrola 14 in Oak</h2>
-                            <div class="item-price">$1,250.00</div>
-                            <div class="item-description">
-                                <p><strong>Quarter-Sawn Oak • Circa 1917</strong></p>
-                                <p>This Victor Victrola phonograph is in beautiful quarter-sawn oak, produced circa
-                                    1917. It features absolutely stunning quarter-sawn oak veneers throughout and is a
-                                    complete machine.</p>
-                                <p>Equipped with a four-spring motor capable of playing several records on a single
-                                    winding. This machine has some of the finest tiger oak veneer I have ever seen on an
-                                    oak Victrola—truly stunning in appearance.</p>
-                                <p>The reproducer has been rebuilt and plays very well. The motor runs quietly and has
-                                    been properly oiled and adjusted. The original cost in 1917 was $175, a significant
-                                    amount for the era.</p>
-                                <p>This outstanding machine was refinished many years ago and still presents
-                                    beautifully. It comes with one NOS needle tin containing approximately 200 needles,
-                                    along with an album filled with 78 RPM records from this era.</p>
-                                <ul class="item-features">
-                                    <li>Beautiful Tiger Oak veneer</li>
-                                    <li>Complete machine, circa 1917</li>
-                                    <li>Rebuilt reproducer, excellent sound</li>
-                                    <li>Four-spring motor (multi-record play)</li>
-                                    <li>Refinished to a high standard</li>
-                                    <li>Dimensions: 22½" W x 23" D x 47" H</li>
-                                    <li>Includes NOS needles and record album</li>
-                                </ul>
-                                <p class="shipping-note"><strong>Shipping:</strong> $325 in the USA only.</p>
-                                <p class="reviews-note"><a href="https://www.ebay.com/str/oldtimecrank"
-                                        target="_blank"><strong>★★★★★ PLEASE CHECK OUT OUR REVIEWS!</strong></a></p>
-                            </div>
-                        </div>
-                    </article>
+                            <div class="item-details">
+                                <span class="item-category">Furniture</span>
+                                <h2 class="item-title">Herzog 1/2 Round Oak Cylinder Cabinet</h2>
+                                <div class="item-price">$1,750.00</div>
+                                <div class="item-description">
+                                    <p>Up for sale is a beautiful Herzog 1/2 Round Oak Cylinder Cabinet. These cabinets
+                                        were
+                                        made around 1905 to 1910 by the Herzog Furniture Company based in Saginaw,
+                                        Michigan.
+                                    </p>
+                                    <p>This 1/2 round holds approximately 120 two minute or four minute cylinders on
+                                        cardboard tubes. The cabinet has been refinished many years ago and has stunning
+                                        quarter sawn oak veneers. The finish is in very nice condition. The interior
+                                        still
+                                        retains the original cardboard pegs.</p>
+                                    <p>If you have an Edison Triumph or Opera or any oak phonograph that you would like
+                                        to
+                                        put on this cabinet, it will look magnificent.</p>
+                                    <ul class="item-features">
+                                        <li>Holds approximately 120 cylinders</li>
+                                        <li>Stunning quarter sawn oak veneers</li>
+                                        <li>Original cardboard pegs intact</li>
+                                        <li>Dimensions: 33" tall x 19" wide x 19" deep</li>
+                                        <li>Free local pickup available</li>
+                                    </ul>
+                                    <p class="shipping-note"><strong>Shipping:</strong> $300 in the USA only. Buyer is
+                                        responsible for all shipping costs.</p>
+                                    <p class="reviews-note"><a href="https://www.ebay.com/str/oldtimecrank"
+                                            target="_blank"><strong>★★★★★ PLEASE CHECK OUT OUR REVIEWS!</strong></a></p>
+                                </div>
 
-                </div>
+                            </div>
+                        </article>
+
+                        <hr class="item-divider">
+
+                        <!-- Item 4: Salter Record Cabinet -->
+                        <article id="salter" class="item-row" data-aos="fade-up">
+                            <div class="item-images">
+                                <div class="slideshow-container" id="slideshow-salter">
+                                    <div class="slide active">
+                                        <img src="./salter-1.png" alt="Salter Cabinet Front View">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./salter-2.png" alt="Salter Cabinet Angle View">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./salter-3.png" alt="Salter Cabinet Detail">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./salter-4.png" alt="Salter Cabinet Interior">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./salter-5.png" alt="Salter Cabinet Side View">
+                                    </div>
+                                    <button class="slide-btn prev"
+                                        onclick="changeSlide('slideshow-salter', -1)">❮</button>
+                                    <button class="slide-btn next"
+                                        onclick="changeSlide('slideshow-salter', 1)">❯</button>
+                                    <div class="slide-dots">
+                                        <span class="dot active" onclick="goToSlide('slideshow-salter', 0)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-salter', 1)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-salter', 2)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-salter', 3)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-salter', 4)"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-details">
+                                <span class="item-category">Furniture</span>
+                                <h2 class="item-title">Salter Quarter Round Record Cabinet</h2>
+                                <div class="item-price">$1,900.00</div>
+                                <div class="item-description">
+                                    <p>This is a great cabinet made by the Salter Furniture Company. There were many
+                                        record
+                                        cabinets made around the early 1900's but very few of this style.</p>
+                                    <p>It is called a Quarter Round because of its very narrow construction, measuring
+                                        only
+                                        16 1/2" wide and 18" deep. Also a little taller than most at 37 3/4" high. The
+                                        top
+                                        measures 17 1/4" x 20" deep.</p>
+                                    <p>The cabinet has a new interior that has been done with 14 new vertical slots to
+                                        hold
+                                        either 10 inch or 12 inch records. The cabinet has been professionally restored
+                                        and
+                                        has stunning red and black mahogany striped veneer on the curved front door.</p>
+                                    <p>Cabinet also has beautiful corner columns on each side with hand carving above
+                                        each
+                                        column. The Salter Record Cabinet would make a great combination with a Victor 6
+                                        or
+                                        a Victor 4 sitting on top of it.</p>
+                                    <ul class="item-features">
+                                        <li>Rare quarter round style cabinet</li>
+                                        <li>Dimensions: 37 3/4" tall x 16 1/2" wide x 18" deep</li>
+                                        <li>Top measures 17 1/4" x 20" deep</li>
+                                        <li>14 vertical slots for 10" or 12" records</li>
+                                        <li>Professionally restored</li>
+                                        <li>Stunning red and black mahogany striped veneer</li>
+                                        <li>Hand-carved corner columns</li>
+                                    </ul>
+                                    <p class="shipping-note"><strong>Shipping:</strong> $300 in the USA only.</p>
+                                    <p class="reviews-note"><a href="https://www.ebay.com/str/oldtimecrank"
+                                            target="_blank"><strong>★★★★★ PLEASE CHECK OUT OUR REVIEWS!</strong></a></p>
+                                </div>
+
+                            </div>
+                        </article>
+
+                        <hr class="item-divider">
+
+                        <!-- Item 5: Edison Banner Home Phonograph -->
+                        <article id="edison" class="item-row" data-aos="fade-up">
+                            <div class="item-images">
+                                <div class="slideshow-container" id="slideshow-edison-banner">
+                                    <div class="slide active">
+                                        <img src="./edison-banner-1.png"
+                                            alt="Edison Banner Home Phonograph with Brass Horn">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./edison-banner-2.png" alt="Edison Banner Home Phonograph Detail">
+                                    </div>
+                                    <button class="slide-btn prev"
+                                        onclick="changeSlide('slideshow-edison-banner', -1)">❮</button>
+                                    <button class="slide-btn next"
+                                        onclick="changeSlide('slideshow-edison-banner', 1)">❯</button>
+                                    <div class="slide-dots">
+                                        <span class="dot active"
+                                            onclick="goToSlide('slideshow-edison-banner', 0)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-edison-banner', 1)"></span>
+                                    </div>
+                                </div>
+                                <div class="item-video">
+                                    <iframe width="100%" height="280"
+                                        src="https://www.youtube.com/embed/ACTwnEjGVfI?rel=0"
+                                        title="Edison Banner Home Phonograph Demo" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="item-details">
+                                <span class="item-category">Phonograph</span>
+                                <h2 class="item-title">Edison Banner Home Phonograph with All Brass Horn</h2>
+                                <div class="item-price">$900.00</div>
+                                <div class="item-description">
+                                    <p>Up for sale is an Edison Model A Banner Home Phonograph, made about 1901 to 1905.
+                                        This machine is all original with a beautiful original finish, original crank,
+                                        and
+                                        original bedplate.</p>
+                                    <p>Features a backmounted early crane with a 30" early style all brass horn. Comes
+                                        with
+                                        4 two minute cylinders. Looks and plays great!</p>
+                                    <p>These machines are hard to find with this combination of early brass horn and
+                                        backmount.</p>
+                                    <ul class="item-features">
+                                        <li>All original Edison Model A</li>
+                                        <li>Beautiful original finish</li>
+                                        <li>Original crank and bedplate</li>
+                                        <li>30" early style all brass horn</li>
+                                        <li>Backmounted early crane</li>
+                                        <li>Includes 4 two minute cylinders</li>
+                                        <li>Looks and plays great</li>
+                                    </ul>
+                                    <p class="shipping-note"><strong>Shipping:</strong> $175 in the USA only.</p>
+                                    <p class="reviews-note"><a href="https://www.ebay.com/str/oldtimecrank"
+                                            target="_blank"><strong>★★★★★ PLEASE CHECK OUT OUR REVIEWS!</strong></a></p>
+                                </div>
+
+                            </div>
+                        </article>
+
+                        <hr class="item-divider">
+
+                        <!-- Item 6: Victrola 14 in Oak -->
+                        <article id="victrola14" class="item-row" data-aos="fade-up">
+                            <div class="item-images">
+                                <div class="slideshow-container" id="slideshow-victrola14">
+                                    <div class="slide active">
+                                        <img src="./victrola-oak-1.png" alt="Victrola 14 in Oak - Front View">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./victrola-oak-2.png" alt="Victrola 14 in Oak - Detail">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./victrola-oak-3.png" alt="Victrola 14 in Oak - Full Profile">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./victrola-oak-4.png" alt="Victrola 14 in Oak - Interior">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./victrola-oak-5.png" alt="Victrola 14 in Oak - Rear Profile">
+                                    </div>
+                                    <button class="slide-btn prev"
+                                        onclick="changeSlide('slideshow-victrola14', -1)">❮</button>
+                                    <button class="slide-btn next"
+                                        onclick="changeSlide('slideshow-victrola14', 1)">❯</button>
+                                    <div class="slide-dots">
+                                        <span class="dot active" onclick="goToSlide('slideshow-victrola14', 0)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-victrola14', 1)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-victrola14', 2)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-victrola14', 3)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-victrola14', 4)"></span>
+                                    </div>
+                                </div>
+                                <div class="item-video">
+                                    <iframe width="100%" height="280"
+                                        src="https://www.youtube.com/embed/NJts5HeZqoc?rel=0"
+                                        title="Victrola 14 in Oak Demo" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="item-details">
+                                <span class="item-category">Phonograph</span>
+                                <h2 class="item-title">Victrola 14 in Oak</h2>
+                                <div class="item-price">$1,250.00</div>
+                                <div class="item-description">
+                                    <p><strong>Quarter-Sawn Oak • Circa 1917</strong></p>
+                                    <p>This Victor Victrola phonograph is in beautiful quarter-sawn oak, produced circa
+                                        1917. It features absolutely stunning quarter-sawn oak veneers throughout and is
+                                        a
+                                        complete machine.</p>
+                                    <p>Equipped with a four-spring motor capable of playing several records on a single
+                                        winding. This machine has some of the finest tiger oak veneer I have ever seen
+                                        on an
+                                        oak Victrola—truly stunning in appearance.</p>
+                                    <p>The reproducer has been rebuilt and plays very well. The motor runs quietly and
+                                        has
+                                        been properly oiled and adjusted. The original cost in 1917 was $175, a
+                                        significant
+                                        amount for the era.</p>
+                                    <p>This outstanding machine was refinished many years ago and still presents
+                                        beautifully. It comes with one NOS needle tin containing approximately 200
+                                        needles,
+                                        along with an album filled with 78 RPM records from this era.</p>
+                                    <ul class="item-features">
+                                        <li>Beautiful Tiger Oak veneer</li>
+                                        <li>Complete machine, circa 1917</li>
+                                        <li>Rebuilt reproducer, excellent sound</li>
+                                        <li>Four-spring motor (multi-record play)</li>
+                                        <li>Refinished to a high standard</li>
+                                        <li>Dimensions: 22½" W x 23" D x 47" H</li>
+                                        <li>Includes NOS needles and record album</li>
+                                    </ul>
+                                    <p class="shipping-note"><strong>Shipping:</strong> $325 in the USA only.</p>
+                                    <p class="reviews-note"><a href="https://www.ebay.com/str/oldtimecrank"
+                                            target="_blank"><strong>★★★★★ PLEASE CHECK OUT OUR REVIEWS!</strong></a></p>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div> <!-- End items-grid -->
+                </div> <!-- End items-layout -->
             </section>
         </main>
 
@@ -501,10 +554,17 @@
         </a>
     </div>
 
+    <!-- MAIN JS -->
+    <script type="module" src="./main.js"></script>
+
+    <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
             once: true,
+            offset: 120,
+            duration: 800,
+            easing: 'ease-out-cubic'
         });
 
         // Mobile Menu Toggle

@@ -206,16 +206,15 @@ img {
 
 .item-description {
   margin-top: 1.5rem;
-  font-size: 1.2rem;
-  /* Slightly larger for editorial feel */
-  line-height: 1.9;
-  color: #3d3522;
-  /* Antique Bronze */
+  font-size: 1.25rem;
+  /* Large and clear */
+  line-height: 1.8;
+  color: #2c2416;
+  /* Deep Walnut - High Contrast */
   font-family: var(--font-heading);
   /* Playfair Display */
-  font-style: italic;
-  /* Added for premium editorial feel */
-  font-weight: 400;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 .item-description p {
@@ -223,12 +222,38 @@ img {
 }
 
 .item-price {
-  font-size: 2.2rem;
-  color: var(--color-brass);
+  font-size: 2.5rem;
+  color: #c5a059;
+  /* Bright Brass */
   font-family: var(--font-subheading);
-  margin-bottom: 1.5rem;
+  /* Cinzel */
+  margin-bottom: 2rem;
   font-weight: 700;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  display: inline-block;
+  border-bottom: 2px solid #d4af37;
+  padding-bottom: 0.25rem;
+}
+
+.item-features {
+  margin: 2rem 0;
+  padding-left: 1.5rem;
+  border-left: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.item-features li {
+  margin-bottom: 0.8rem;
+  font-family: var(--font-body);
+  color: #3d3522;
+  font-size: 1.1rem;
+  position: relative;
+}
+
+.item-features li::before {
+  content: '◈';
+  position: absolute;
+  left: -1.5rem;
+  color: #c5a059;
 }
 
 /* Logo Image */
@@ -644,27 +669,40 @@ img {
 /* Page Hero (Items Page) */
 .page-hero {
   padding: calc(var(--spacing-xl) + 80px) 0 var(--spacing-lg);
-  background-color: var(--color-deep-woods);
+  background-color: #0d140d;
+  /* Deep Midnight Green */
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('https://www.transparenttextures.com/patterns/dark-matter.png');
   text-align: center;
+  border-bottom: 2px solid var(--color-brass);
 }
 
 .page-title {
-  font-size: 3rem;
-  color: var(--color-brass);
+  font-family: var(--font-subheading);
+  /* Cinzel */
+  font-size: 3.5rem;
+  color: #d4af37;
+  /* Burnished Gold */
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.2);
   margin-bottom: 1rem;
 }
 
 .page-subtitle {
-  font-size: 1.2rem;
-  color: var(--color-cream-dim);
-  max-width: 600px;
+  font-size: 1.3rem;
+  color: #a89f8d;
+  max-width: 700px;
   margin: 0 auto;
+  font-style: italic;
+  font-family: var(--font-heading);
 }
 
 /* Items Section */
 .items-section {
   padding: var(--spacing-xl) 0;
-  background: linear-gradient(to bottom, var(--color-cream) 0%, var(--color-cream-dim) 50%, #dad2bc 100%);
+  background-color: #1a140a;
+  /* Dark Mahogany base */
+  background-image: linear-gradient(to bottom, #1a140a 0%, #2c1e0f 100%);
   position: relative;
 }
 
@@ -675,29 +713,141 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
-  opacity: 0.3;
+  background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+  opacity: 0.15;
   pointer-events: none;
 }
 
+/* Main layout grid for items section */
+.items-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Sidebar Styling */
+.items-sidebar {
+  position: sticky;
+  top: 120px;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.sidebar-inner {
+  background-color: #3b2b1a;
+  /* Wood color */
+  background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  padding: 2rem;
+  border: 4px solid #2a1f12;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: sidebarSlide 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes sidebarSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.sidebar-title {
+  font-family: var(--font-subheading);
+  color: #d4af37;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.sidebar-nav ul li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-nav a {
+  display: block;
+  padding: 0.8rem 1rem;
+  color: #fdfaf3;
+  /* Parchment color */
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(197, 160, 89, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+  background: rgba(212, 175, 55, 0.1);
+  color: #d4af37;
+  border-color: #d4af37;
+  transform: translateX(5px);
+}
+
+/* Item row on PC */
 .item-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr;
+  /* Stacked within the grid-area but we use grid for the whole page */
+  gap: 2rem;
   align-items: start;
-  padding: 4rem;
-  margin-bottom: 4rem;
-  background: rgba(242, 237, 224, 0.8);
-  /* Using --color-cream-dim with transparency */
-  border-radius: var(--border-radius);
-  border: 1px solid rgba(197, 160, 89, 0.2);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
+  padding: 3rem;
+  margin-bottom: 6rem;
+  background-color: #3b2b1a;
+  /* Rich Wood Color */
+  background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  border-radius: 4px;
+  border: 4px solid #2a1f12;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5),
+    0 30px 60px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+/* Sub-grid for item row 2-column look on PC */
+@media (min-width: 1200px) {
+  .item-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile Responsiveness for Sidebar */
+@media (max-width: 1024px) {
+  .items-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .items-sidebar {
+    position: relative;
+    top: 0;
+    margin-bottom: 3rem;
+    max-height: none;
+  }
+
+  .sidebar-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .sidebar-nav a {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+  }
 }
 
 .item-images {
   position: sticky;
-  top: 100px;
 }
 
 .main-image {
