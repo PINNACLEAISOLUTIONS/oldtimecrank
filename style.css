@@ -12,6 +12,11 @@
   --color-text-light: #f4f1ea;
   /* Warm Cream */
 
+  /* Electric Border Effect */
+  --electric-border-color: #dd8448;
+  --electric-light-color: #ffcc66;
+  --electric-glow: rgba(221, 132, 72, 0.6);
+
   --font-heading: 'Playfair Display', serif;
   --font-subheading: 'Cinzel', serif;
   --font-body: 'Lato', sans-serif;
@@ -851,12 +856,31 @@ img {
 }
 
 .main-image {
-  border: 4px solid var(--color-brass);
-  /* Thicker for more impact */
-  overflow: hidden;
+  position: relative;
+  border: 4px solid var(--electric-border-color);
+  overflow: visible;
   border-radius: var(--border-radius);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   background-color: #1a1a1a;
+  box-shadow:
+    0 0 15px var(--electric-glow),
+    0 0 30px rgba(221, 132, 72, 0.4),
+    0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: electricPulse 3s ease-in-out infinite;
+}
+
+.main-image::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 2px solid var(--electric-light-color);
+  border-radius: calc(var(--border-radius) + 4px);
+  opacity: 0.5;
+  filter: blur(4px);
+  pointer-events: none;
+  animation: electricGlow 2s ease-in-out infinite alternate;
 }
 
 .main-image img {
@@ -864,10 +888,35 @@ img {
   height: 400px;
   object-fit: cover;
   transition: transform 0.5s ease;
+  filter: url(#turbulent-displace);
 }
 
 .main-image:hover img {
   transform: scale(1.03);
+}
+
+@keyframes electricPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 15px var(--electric-glow), 0 0 30px rgba(221, 132, 72, 0.4), 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 25px var(--electric-glow), 0 0 50px rgba(221, 132, 72, 0.5), 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes electricGlow {
+  0% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0.7;
+    transform: scale(1.01);
+  }
 }
 
 .item-video {
@@ -883,14 +932,38 @@ img {
   display: block;
 }
 
-/* Image Slideshow */
+/* Image Slideshow - with Electric Border Effect */
 .slideshow-container {
   position: relative;
-  border: 3px solid var(--color-brass);
+  border: 4px solid var(--electric-border-color);
   border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  overflow: visible;
   background: #000;
+  box-shadow:
+    0 0 15px var(--electric-glow),
+    0 0 30px rgba(221, 132, 72, 0.4),
+    0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: electricPulse 3s ease-in-out infinite;
+}
+
+.slideshow-container::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 2px solid var(--electric-light-color);
+  border-radius: calc(var(--border-radius) + 4px);
+  opacity: 0.5;
+  filter: blur(4px);
+  pointer-events: none;
+  animation: electricGlow 2s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+.slideshow-container .slide img {
+  filter: url(#turbulent-displace);
 }
 
 .slide {
@@ -1190,6 +1263,7 @@ img {
     border-radius: 50%;
   }
 }
+
 /* --- VISUAL POLISH & EFFECTS --- */
 
 /* 1. Typography & Background Update */
@@ -1226,9 +1300,9 @@ img {
   background: var(--color-brass);
   color: #050801;
   box-shadow: 0 0 5px var(--color-brass),
-              0 0 25px var(--color-brass),
-              0 0 50px var(--color-brass),
-              0 0 200px var(--color-brass);
+    0 0 25px var(--color-brass),
+    0 0 50px var(--color-brass),
+    0 0 200px var(--color-brass);
 }
 
 .main-nav a span {
@@ -1237,58 +1311,165 @@ img {
 }
 
 .main-nav a span:nth-child(1) {
-  top: 0; left: 0; width: 100%; height: 2px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
   background: linear-gradient(90deg, transparent, var(--color-brass));
   animation: animate1 1s linear infinite;
 }
-@keyframes animate1 { 0% { left: -100%; } 50%, 100% { left: 100%; } }
+
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+}
 
 .main-nav a span:nth-child(2) {
-  top: -100%; right: 0; width: 2px; height: 100%;
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
   background: linear-gradient(180deg, transparent, var(--color-brass));
-  animation: animate2 1s linear infinite; animation-delay: 0.25s;
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
 }
-@keyframes animate2 { 0% { top: -100%; } 50%, 100% { top: 100%; } }
+
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+
+  50%,
+  100% {
+    top: 100%;
+  }
+}
 
 .main-nav a span:nth-child(3) {
-  bottom: 0; right: 0; width: 100%; height: 2px;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
   background: linear-gradient(270deg, transparent, var(--color-brass));
-  animation: animate3 1s linear infinite; animation-delay: 0.50s;
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.50s;
 }
-@keyframes animate3 { 0% { right: -100%; } 50%, 100% { right: 100%; } }
+
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+
+  50%,
+  100% {
+    right: 100%;
+  }
+}
 
 .main-nav a span:nth-child(4) {
-  bottom: -100%; left: 0; width: 2px; height: 100%;
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
   background: linear-gradient(360deg, transparent, var(--color-brass));
-  animation: animate4 1s linear infinite; animation-delay: 0.75s;
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
 }
-@keyframes animate4 { 0% { bottom: -100%; } 50%, 100% { bottom: 100%; } }
+
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
 
 /* 3. Electric Border */
 .card-container {
-  padding: 2px; border-radius: 2px; position: relative;
+  padding: 2px;
+  border-radius: 2px;
+  position: relative;
   background: linear-gradient(-30deg, var(--gradient-color), transparent, var(--gradient-color));
-  width: 100%; max-width: 600px; margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
-.inner-container { position: relative; z-index: 2; }
-.border-outer { border: 1px solid rgba(221, 132, 72, 0.5); border-radius: 2px; padding: 4px; }
-.card-container img, .card-container .slideshow-container {
+
+.inner-container {
+  position: relative;
+  z-index: 2;
+}
+
+.border-outer {
+  border: 1px solid rgba(221, 132, 72, 0.5);
+  border-radius: 2px;
+  padding: 4px;
+}
+
+.card-container img,
+.card-container .slideshow-container {
   border: 2px solid var(--electric-border-color);
-  filter: url(#turbulent-displace); z-index: 3; position: relative;
+  filter: url(#turbulent-displace);
+  z-index: 3;
+  position: relative;
 }
+
 .glow-layer-1 {
-  border: 2px solid rgba(221, 132, 72, 0.6); border-radius: 2px; width: 100%; height: 100%;
-  position: absolute; top: 0; left: 0; pointer-events: none; filter: blur(2px); z-index: 1;
+  border: 2px solid rgba(221, 132, 72, 0.6);
+  border-radius: 2px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  filter: blur(2px);
+  z-index: 1;
 }
+
 .glow-layer-2 {
-  border: 2px solid var(--electric-light-color); border-radius: 2px; width: 100%; height: 100%;
-  position: absolute; top: 0; left: 0; pointer-events: none; filter: blur(6px); z-index: 1;
+  border: 2px solid var(--electric-light-color);
+  border-radius: 2px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  filter: blur(6px);
+  z-index: 1;
 }
-.overlay-1, .overlay-2 {
-  position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 24px;
-  pointer-events: none; mix-blend-mode: overlay; z-index: 4;
+
+.overlay-1,
+.overlay-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  z-index: 4;
 }
+
 .background-glow {
-  position: absolute; top: 0; left: 0; right: 0; bottom: 0; filter: blur(32px); opacity: 0.3; z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(32px);
+  opacity: 0.3;
+  z-index: 0;
   background: linear-gradient(-30deg, var(--electric-light-color), transparent, var(--electric-border-color));
 }
