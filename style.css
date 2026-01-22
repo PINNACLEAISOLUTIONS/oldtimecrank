@@ -1090,30 +1090,51 @@ img {
     display: block;
   }
 
-  /* Items Page Responsive */
+  /* Items Page Responsive Refinements */
   .page-title {
     font-size: 2rem;
+  }
+
+  .items-sidebar {
+    position: relative;
+    top: 0;
+    margin-bottom: 3rem;
+  }
+
+  .sidebar-inner {
+    padding: 1.5rem !important;
   }
 
   .item-row {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    padding: 1rem !important;
+    /* Thin wood frame on mobile */
+    margin-bottom: 4rem;
   }
 
-  .item-images {
-    position: static;
+  .item-details {
+    padding: 1.5rem !important;
+    /* More space for content */
+  }
+
+  .item-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 0.8rem;
+  }
+
+  .item-price {
+    font-size: 1.8rem !important;
+    margin-bottom: 1.5rem;
+  }
+
+  .item-description {
+    font-size: 1.15rem !important;
+    line-height: 1.7;
   }
 
   .main-image img {
     height: 300px;
-  }
-
-  .item-title {
-    font-size: 1.5rem;
-  }
-
-  .item-price {
-    font-size: 1.4rem;
   }
 }
 
