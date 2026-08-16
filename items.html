@@ -36,16 +36,16 @@
       "@type": "ItemList",
       "name": "Antique Phonographs & Record Cabinets For Sale",
       "description": "Quality antique phonographs, Edison cylinder players, and vintage record cabinets",
-      "numberOfItems": 5,
+      "numberOfItems": 8,
       "itemListElement": [
         {
           "@type": "Product",
           "position": 1,
-          "name": "Victor 5 Phonograph",
-          "description": "Quarter sawn oak cabinet with nickel plating, triple spring motor, brass bell horn",
+          "name": "Victor VI Phonograph with Matching Herzog No. 820 Base Cabinet & Eureka Wood Horn",
+          "description": "Master-restored Victor VI with 24K gold plated hardware, matching Herzog No. 820 cabinet, and stenciled Eureka wood horn",
           "offers": {
             "@type": "Offer",
-            "price": "2000.00",
+            "price": "18000.00",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock"
           }
@@ -53,6 +53,30 @@
         {
           "@type": "Product",
           "position": 2,
+          "name": "Original Victor 5 (Victor V) Outside Horn Phonograph",
+          "description": "Quarter sawn oak cabinet with original finish, triple spring motor, and 20.5 inch brass bell horn",
+          "offers": {
+            "@type": "Offer",
+            "price": "2450.00",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 3,
+          "name": "Victor Victrola Model VV-XVIII (Victor 18) – Flagship Mahogany",
+          "description": "Ribbon-striped mahogany serpentine cabinet with 24K gold plated hardware and Louis XV moulding",
+          "offers": {
+            "@type": "Offer",
+            "price": "3950.00",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 4,
           "name": "Indestructible Cylinder - Uncle Josh",
           "offers": {
             "@type": "Offer",
@@ -62,7 +86,7 @@
         },
         {
           "@type": "Product",
-          "position": 3,
+          "position": 5,
           "name": "Herzog 1/2 Round Oak Cylinder Cabinet",
           "offers": {
             "@type": "Offer",
@@ -72,7 +96,7 @@
         },
         {
           "@type": "Product",
-          "position": 4,
+          "position": 6,
           "name": "Salter Quarter Round Record Cabinet",
           "offers": {
             "@type": "Offer",
@@ -82,11 +106,21 @@
         },
         {
           "@type": "Product",
-          "position": 5,
+          "position": 7,
           "name": "Edison Banner Home Phonograph with All Brass Horn",
           "offers": {
             "@type": "Offer",
             "price": "900.00",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 8,
+          "name": "Victrola 14 in Oak",
+          "offers": {
+            "@type": "Offer",
+            "price": "1250.00",
             "priceCurrency": "USD"
           }
         }
@@ -99,6 +133,7 @@
     <div id="app">
         <!-- Electric border glow effects are handled via CSS box-shadow only -->
 
+        <!-- Header -->
         <header class="site-header">
             <div class="container header-inner">
                 <div class="logo">
@@ -107,17 +142,14 @@
                 </div>
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="index.html"><span></span><span></span><span></span><span></span>Home</a></li>
-                        <li><a href="items.html"
-                                class="active"><span></span><span></span><span></span><span></span>Items For Sale</a>
-                        </li>
-                        <li><a href="index.html#about"><span></span><span></span><span></span><span></span>Our Story</a>
-                        </li>
-                        <li><a href="index.html#contact" class="btn btn-outline" style="padding: 10px 20px;">Contact</a>
-                        </li>
+                        <li><a href="index.html#hero"><span></span><span></span><span></span><span></span>Home</a></li>
+                        <li><a href="items.html"><span></span><span></span><span></span><span></span>Items For Sale</a></li>
+                        <li><a href="index.html#about"><span></span><span></span><span></span><span></span>Our Story</a></li>
+                        <li><a href="index.html#contact" class="btn btn-outline"
+                                style="padding: 10px 20px;">Contact</a></li>
                     </ul>
                 </nav>
-                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -125,8 +157,8 @@
             </div>
         </header>
 
-        <main>
-            <!-- Page Header -->
+        <main class="items-page">
+            <!-- Hero -->
             <section class="page-hero">
                 <div class="container">
                     <h1 class="page-title" data-aos="fade-up">Items For Sale</h1>
@@ -144,7 +176,9 @@
                             <h3 class="sidebar-title">Collection</h3>
                             <nav class="sidebar-nav">
                                 <ul>
+                                    <li><a href="#victor6">Victor VI w/ Herzog Cabinet</a></li>
                                     <li><a href="#victor5">Victor 5 Phonograph</a></li>
+                                    <li><a href="#victor18">Victrola 18 Mahogany</a></li>
                                     <li><a href="#cylinder">Uncle Josh Cylinder</a></li>
                                     <li><a href="#herzog">Herzog Oak Cabinet</a></li>
                                     <li><a href="#salter">Salter Record Cabinet</a></li>
@@ -157,11 +191,88 @@
 
                     <div class="items-grid">
 
-                        <!-- Item 1: Victor 5 -->
+                        <!-- Item 1: Victor VI with Herzog Cabinet & Eureka Horn -->
+                        <article id="victor6" class="item-row" data-aos="fade-up">
+                            <div class="item-images">
+                                <div class="slideshow-container" id="slideshow-victor6">
+                                    <div class="slide active">
+                                        <img src="./victor_6_1.png" alt="Victor VI with Stenciled Eureka Wood Horn">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./victor_6_2.png" alt="Victor VI Full Ensemble on Herzog No. 820 Base Cabinet">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./victor_6_3.png" alt="Victor VI 24K Gold Tonearm & Side Perspective">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./victor_6_4.png" alt="Victor VI Full Height Profile & Claw Feet">
+                                    </div>
+                                    <button class="slide-btn prev"
+                                        onclick="changeSlide('slideshow-victor6', -1)">❮</button>
+                                    <button class="slide-btn next"
+                                        onclick="changeSlide('slideshow-victor6', 1)">❯</button>
+                                    <div class="slide-dots">
+                                        <span class="dot active" onclick="goToSlide('slideshow-victor6', 0)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-victor6', 1)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-victor6', 2)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-victor6', 3)"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-details">
+                                <span class="item-category">★ Featured Premier Showcase</span>
+                                <h2 class="item-title">Victor VI Phonograph with Matching Herzog No. 820 Base Cabinet and Exceptional Eureka Wood Horn</h2>
+                                <div class="item-price">$18,000.00</div>
+                                <div class="item-description">
+                                    <p><strong>Circa 1904 – 1915 • Museum-Quality Set • 24K Gold Hardware</strong></p>
+                                    <p>In the world of antique phonographs, some machines stand out far above the rest. Up for sale is a matchless combination of a fully restored Victor VI phonograph, a matching Herzog Number 820 base cabinet, and a truly stunning Eureka wood horn.</p>
+                                    <p>This Victor VI has been completely restored to its former glory with brilliant 24K gold plated hardware throughout. It sits perfectly upon a matching Herzog Number 820 base cabinet, which has also been professionally restored to highlight its rich wood grain, hand carvings, and intricate details. Together, the machine and cabinet present a unified, elegant profile that serves as the centerpiece of any fine collection.</p>
+                                    <p>The highlight of this display is the Eureka Wood Horn. This horn features beautiful, meticulous gold stenciling carefully copied from an original horn made by the Eureka Horn Company. Marketed later as the True Tone Amplifying Horn through the General Phonograph Supply Company of New York City, it creates a historically accurate and visually striking masterpiece.</p>
+                                    <p>Every mechanical aspect has been addressed with the utmost care. The motor is fully serviced, oiled, and lubricated, running smooth and silent. It features a professionally rebuilt Exhibition reproducer with all-new gaskets and diaphragm for pristine acoustic reproduction.</p>
+                                    <ul class="item-features">
+                                        <li>Matchless ensemble: Fully restored Victor VI, matching Herzog No. 820 cabinet &amp; Eureka horn</li>
+                                        <li>Exceptional Eureka Wood Horn with custom gold filigree stenciling</li>
+                                        <li>True Tone Amplifying Horn heritage (General Phonograph Supply Co. NYC)</li>
+                                        <li>Brilliant 24-Karat Gold Plated Hardware on machine and bracket</li>
+                                        <li>Matching Herzog No. 820 Base Cabinet with rich grain and claw feet</li>
+                                        <li>Fully serviced, oiled, and lubricated triple-spring motor</li>
+                                        <li>Rebuilt Exhibition Reproducer with new gaskets and diaphragm</li>
+                                    </ul>
+                                    <p class="shipping-note"><strong>Shipping:</strong> $650 in Continental USA • Free Local Pickup • Museum-grade double-crate packing.</p>
+                                    <p class="reviews-note"><a href="https://www.ebay.com/str/oldtimecrank"
+                                            target="_blank"><strong>★★★★★ PLEASE CHECK OUT OUR REVIEWS!</strong></a></p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <hr class="item-divider">
+
+                        <!-- Item 2: Victor 5 Outside Horn -->
                         <article id="victor5" class="item-row" data-aos="fade-up">
                             <div class="item-images">
-                                <div class="main-image">
-                                    <img src="./edison-phonograph.png" alt="Victor 5 Phonograph">
+                                <div class="slideshow-container" id="slideshow-victor5">
+                                    <div class="slide active">
+                                        <img src="./victor_5_1.png" alt="Victor 5 Phonograph with Brass Bell Horn">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./victor_5_2.png" alt="Victor 5 Rebuilt Exhibition Reproducer">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./victor_5_3.png" alt="Victor 5 Rear Bracket and Gold Striping">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./victor_5_4.png" alt="Victor 5 Quarter Sawn Oak Cabinet & Plate">
+                                    </div>
+                                    <button class="slide-btn prev"
+                                        onclick="changeSlide('slideshow-victor5', -1)">❮</button>
+                                    <button class="slide-btn next"
+                                        onclick="changeSlide('slideshow-victor5', 1)">❯</button>
+                                    <div class="slide-dots">
+                                        <span class="dot active" onclick="goToSlide('slideshow-victor5', 0)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-victor5', 1)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-victor5', 2)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-victor5', 3)"></span>
+                                    </div>
                                 </div>
                                 <div class="item-video">
                                     <iframe width="100%" height="280"
@@ -173,38 +284,78 @@
                             </div>
                             <div class="item-details">
                                 <span class="item-category">Phonograph</span>
-                                <h2 class="item-title">Victor 5 Phonograph</h2>
-                                <div class="item-price">$2,000.00</div>
+                                <h2 class="item-title">Original Victor 5 (Victor V) Outside Horn Phonograph</h2>
+                                <div class="item-price">$2,450.00</div>
                                 <div class="item-description">
-                                    <p>The Victor 5 is well known for its handsome quarter sawn oak cabinet and this
-                                        example
-                                        retains its original finish. All original nickel plating is in excellent shape.
-                                        The
-                                        triple spring motor runs strong and smooth; it will play several records with
-                                        ease.
-                                    </p>
-                                    <p>The backmount has its original striping and is in near mint condition. This
-                                        machine
-                                        comes with a stunning brass bell horn measuring 19 1/2" across the bell and 29
-                                        1/2"
-                                        long. The horn has been professionally straightened and polished; it presents
-                                        beautifully.</p>
-                                    <p>The original Victor decal is in nice condition. The only replaced item is the
-                                        turntable felt. The Exhibition reproducer has been rebuilt and plays
-                                        excellently.
-                                    </p>
-                                    <p>These machines were produced between 1906 and 1920. This Victor 5 stands as a
-                                        wonderful example of Victor craftsmanship from that era.</p>
+                                    <p><strong>Circa 1906 – 1920 • Quarter Sawn Oak • Original Finish</strong></p>
+                                    <p>The Victor 5 is well known for its handsome quarter sawn oak cabinet and this example retains its original finish. All original nickel plating is in excellent shape.</p>
+                                    <p>The triple spring motor runs strong and smooth, playing several records with ease. The rear mount features restored decorative gold striping faithful to original Victor specifications.</p>
+                                    <p>The machine comes with a stunning brass bell horn measuring 20 1/2" across the bell and 27 1/2" long. The horn has been professionally straightened and polished; it presents beautifully with fresh original-type lacquer and a new Victor decal.</p>
+                                    <p>The Exhibition reproducer has been rebuilt and plays excellently. Cabinet base measures 16 3/8" x 16 3/8" x 7 1/2" high. Comes with one NOS needle tin containing 200 needles.</p>
                                     <ul class="item-features">
-                                        <li>Original quarter sawn oak cabinet with original finish</li>
-                                        <li>Triple spring motor, runs strong and smooth</li>
-                                        <li>Brass bell horn (19 1/2" x 29 1/2"), professionally polished</li>
-                                        <li>Exhibition reproducer, rebuilt and plays excellently</li>
-                                        <li>Includes several acoustic records</li>
-                                        <li>Includes new old stock needle tin with 200 needles</li>
+                                        <li>Original finish quarter sawn oak cabinet</li>
+                                        <li>Triple spring motor runs strong and smooth</li>
+                                        <li>20.5" Brass Bell Horn (27.5" Length), professionally polished</li>
+                                        <li>Rebuilt Exhibition reproducer for crisp sound</li>
+                                        <li>Restored decorative gold striping on rear back-bracket</li>
+                                        <li>All original nickel plating in excellent condition</li>
+                                        <li>Includes NOS needle tin with 200 needles &amp; acoustic records</li>
                                     </ul>
+                                    <p class="shipping-note"><strong>Shipping:</strong> $260 in Continental USA • Free local pickup.</p>
+                                    <p class="reviews-note"><a href="https://www.ebay.com/str/oldtimecrank"
+                                            target="_blank"><strong>★★★★★ PLEASE CHECK OUT OUR REVIEWS!</strong></a></p>
                                 </div>
+                            </div>
+                        </article>
 
+                        <hr class="item-divider">
+
+                        <!-- Item 3: Victor Victrola Model VV-XVIII (Victor 18) -->
+                        <article id="victor18" class="item-row" data-aos="fade-up">
+                            <div class="item-images">
+                                <div class="slideshow-container" id="slideshow-victor18">
+                                    <div class="slide active">
+                                        <img src="./victrola_18_1.png" alt="Victor VV-XVIII Full Open Cabinet & 24K Gold Tonearm">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./victrola_18_2.png" alt="Victor VV-XVIII Front Closed Serpentine Cabinet">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./victrola_18_3.png" alt="Victor VV-XVIII Quarter Angle View & Motor Deck">
+                                    </div>
+                                    <button class="slide-btn prev"
+                                        onclick="changeSlide('slideshow-victor18', -1)">❮</button>
+                                    <button class="slide-btn next"
+                                        onclick="changeSlide('slideshow-victor18', 1)">❯</button>
+                                    <div class="slide-dots">
+                                        <span class="dot active" onclick="goToSlide('slideshow-victor18', 0)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-victor18', 1)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-victor18', 2)"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-details">
+                                <span class="item-category">Phonograph</span>
+                                <h2 class="item-title">Victor Victrola Model VV-XVIII (Victor 18) – Flagship Mahogany</h2>
+                                <div class="item-price">$3,950.00</div>
+                                <div class="item-description">
+                                    <p><strong>Circa 1915 – 1916 • Ribbon-Striped Mahogany • 24K Gold Hardware</strong></p>
+                                    <p>Produced circa 1915, the Model 18 was one of Victor's most elite flagship instruments, representing the pinnacle of Victor craftsmanship. These machines were only manufactured for a little over a year and were discontinued after the 1916 Christmas season.</p>
+                                    <p>Built with carefully selected "ribbon-striped" mahogany veneers, the cabinet features elegant serpentine front and sides accented by classic Louis XV mouldings. All original hardware is 24-karat gold plated and remains in very good condition.</p>
+                                    <p>The motor has been recently serviced and runs smooth and quiet. The reproducer has been rebuilt to ensure exceptional playback quality. Measures 48" High x 23 1/2" Wide x 25 1/2" Deep.</p>
+                                    <ul class="item-features">
+                                        <li>Ultra-Rare Flagship Model produced for only ~1 year</li>
+                                        <li>Selected ribbon-striped mahogany with serpentine curves</li>
+                                        <li>All original 24-Karat Gold Plated Hardware</li>
+                                        <li>Hand-carved Louis XV mouldings and accents</li>
+                                        <li>Recently serviced motor, runs smooth and quiet</li>
+                                        <li>Rebuilt reproducer for pristine acoustic reproduction</li>
+                                        <li>Includes Victor needle tin (~200 needles) and period 78 RPM records</li>
+                                    </ul>
+                                    <p class="shipping-note"><strong>Shipping:</strong> $450 in USA • FREE delivery to Schaumburg, IL Phonograph Show.</p>
+                                    <p class="reviews-note"><a href="https://www.ebay.com/str/oldtimecrank"
+                                            target="_blank"><strong>★★★★★ PLEASE CHECK OUT OUR REVIEWS!</strong></a></p>
+                                </div>
                             </div>
                         </article>
 
