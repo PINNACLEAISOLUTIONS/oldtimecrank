@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Outfit:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
   <!-- AOS Animations -->
@@ -66,6 +66,17 @@
 </head>
 
 <body>
+  <!-- Top Scroll Reading Progress Indicator -->
+  <div id="scroll-progress" class="scroll-progress-bar"></div>
+
+  <!-- Ambient Luxury Background Canvas & Mesh Glow Orbs -->
+  <canvas id="ambient-canvas" class="ambient-canvas"></canvas>
+  <div class="ambient-glow-mesh" aria-hidden="true">
+    <div class="mesh-orb orb-1"></div>
+    <div class="mesh-orb orb-2"></div>
+    <div class="mesh-orb orb-3"></div>
+  </div>
+
   <div id="app">
 
     <!-- HEADER -->
@@ -80,6 +91,7 @@
           <ul>
             <li><a href="#hero" class="active">Home</a></li>
             <li><a href="items.html">Items For Sale</a></li>
+            <li><a href="#featured">Masterpieces</a></li>
             <li><a href="#about">Our Story</a></li>
             <li><a href="#contact" class="btn btn-outline" style="padding: 10px 22px;">Contact</a></li>
           </ul>
@@ -100,18 +112,147 @@
       <section id="hero" class="hero-section">
         <div class="hero-bg-overlay"></div>
         <div class="container hero-content">
-          <div class="hero-badge" data-aos="fade-down">
-            <span>✦</span> Preserving Acoustic Audio History Since 1904 <span>✦</span>
+          
+          <!-- Acoustic Soundwave Pulse Graphic Emitter -->
+          <div class="hero-soundwave-wrap" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="soundwave-pulse-emitter">
+              <div class="pulse-ring ring-1"></div>
+              <div class="pulse-ring ring-2"></div>
+              <div class="pulse-ring ring-3"></div>
+              <div class="pulse-core-disc" title="Acoustic Audio Frequency Resonance">
+                <span>✦</span>
+              </div>
+            </div>
           </div>
+
+          <div class="hero-badge" data-aos="fade-down">
+            <span class="live-pulse-dot"></span> Preserving Acoustic Audio History Since 1904 
+            <div class="spectrum-visualizer" aria-hidden="true">
+              <span class="spectrum-bar"></span>
+              <span class="spectrum-bar"></span>
+              <span class="spectrum-bar"></span>
+              <span class="spectrum-bar"></span>
+              <span class="spectrum-bar"></span>
+              <span class="spectrum-bar"></span>
+            </div>
+          </div>
+
           <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
             Preserving the <span class="text-accent">Sound</span> of History
           </h1>
           <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
-            Museum-grade antique phonographs, Edison cylinder players, and rare custom record cabinets — restored with passion and precision.
+            Museum-grade antique phonographs, Edison cylinder players, and rare custom record cabinets — restored with passion, precision, and historical authenticity.
           </p>
           <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
             <a href="items.html" class="btn btn-primary">EXPLORE ITEMS FOR SALE</a>
-            <a href="#about" class="btn btn-outline">Our 45-Year Story</a>
+            <a href="#featured" class="btn btn-outline">View Masterpieces</a>
+            <a href="#about" class="btn btn-secondary">Our 45-Year Story</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED MASTERPIECES SHOWCASE -->
+      <section id="featured" class="featured-showcase-section">
+        <div class="container">
+          <div class="section-header-wrap" data-aos="fade-up">
+            <span class="section-tag">✦ Curated Highlights ✦</span>
+            <h2 class="section-title">Featured Historical Masterpieces</h2>
+            <p class="intro-text">Hand-selected, fully restored instruments and cabinets currently available for immediate acquisition.</p>
+          </div>
+
+          <div class="featured-grid">
+            
+            <!-- Victor VI -->
+            <article class="featured-preview-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="preview-img-wrap">
+                <span class="preview-badge-tag">★ Premier Showcase</span>
+                <img src="./victor_6_1.png" alt="Victor VI Phonograph with Eureka Horn">
+              </div>
+              <div class="preview-content">
+                <h3 class="preview-title">Victor VI with Matching Herzog No. 820 Cabinet</h3>
+                <p class="preview-desc">Flagship outside-horn gramophone with 24K gold-plated hardware, matching curved cabinet, and rare stenciled Eureka wood horn.</p>
+                <div class="preview-footer">
+                  <span class="preview-price">$18,000</span>
+                  <a href="items.html#victor6" class="btn btn-primary preview-btn">View Details ➔</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Victor V Oak -->
+            <article class="featured-preview-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="preview-img-wrap">
+                <span class="preview-badge-tag">★ Collector Grade</span>
+                <img src="./victor_5_1.png" alt="Original Victor 5 Phonograph">
+              </div>
+              <div class="preview-content">
+                <h3 class="preview-title">Original Victor 5 Outside Horn Phonograph</h3>
+                <p class="preview-desc">Quarter sawn oak cabinet with original factory finish, powerful triple-spring motor, and stunning 20.5" brass bell horn.</p>
+                <div class="preview-footer">
+                  <span class="preview-price">$2,450</span>
+                  <a href="items.html#victor5" class="btn btn-primary preview-btn">View Details ➔</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Victrola 18 -->
+            <article class="featured-preview-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="preview-img-wrap">
+                <span class="preview-badge-tag">★ Museum Quality</span>
+                <img src="./victrola_18_1.png" alt="Victrola Model VV-XVIII Mahogany">
+              </div>
+              <div class="preview-content">
+                <h3 class="preview-title">Victrola Model VV-XVIII Mahogany (Circa 1915)</h3>
+                <p class="preview-desc">Victor's supreme luxury model with matched ribbon mahogany veneers, gold-plated trim, and masterfully rebuilt mechanicals.</p>
+                <div class="preview-footer">
+                  <span class="preview-price">$3,250</span>
+                  <a href="items.html#victor18" class="btn btn-primary preview-btn">View Details ➔</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <div style="text-align: center;" data-aos="fade-up">
+            <a href="items.html" class="btn btn-secondary" style="padding: 1.1rem 3rem;">Browse Complete 8-Item Collection ➔</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- HERITAGE & CRAFTSMANSHIP BENTO GRID -->
+      <section class="heritage-section">
+        <div class="container">
+          <div class="section-header-wrap" data-aos="fade-up">
+            <span class="section-tag">✦ Uncompromising Standards ✦</span>
+            <h2 class="section-title">The Art of Pure Acoustic Preservation</h2>
+            <p class="intro-text">Every instrument that enters our workshop receives the care of over four decades of restoration mastery.</p>
+          </div>
+
+          <div class="heritage-grid">
+            
+            <div class="heritage-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="heritage-icon-wrap">🎵</div>
+              <h3>100% Pure Acoustic Audio</h3>
+              <p>No electronics, cords, or digital sound. Experience the warm, authentic mechanical acoustic sound vibrations just as they were heard in 1904.</p>
+            </div>
+
+            <div class="heritage-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="heritage-icon-wrap">🛠️</div>
+              <h3>45+ Years Master Restorations</h3>
+              <p>Rebuilt spring motors, cleaned and regulated governors, genuine mica diaphragm reproducers, and historically accurate museum-grade finishes.</p>
+            </div>
+
+            <div class="heritage-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="heritage-icon-wrap">📦</div>
+              <h3>White-Glove Safe Crating</h3>
+              <p>Double-boxed, heavily padded custom crating and insured freight handling ensuring your antique arrives in flawless playing condition anywhere in the world.</p>
+            </div>
+
+            <div class="heritage-card" data-aos="fade-up" data-aos-delay="400">
+              <div class="heritage-icon-wrap">📜</div>
+              <h3>Certified Historical Authenticity</h3>
+              <p>Each unit is thoroughly inspected for period correctness, serial validation, original patents, and verified operational performance.</p>
+            </div>
+
           </div>
         </div>
       </section>
@@ -124,18 +265,17 @@
               class="about-banner">
             <h2 class="section-title">The Old Time Crank Philosophy</h2>
             <p class="intro-text">
-              My name is <strong>Mike Patella</strong> and I have been buying and selling antiques for over <strong>45
-                years</strong>.
+              My name is <strong>Mike Patella</strong> and I have been buying, restoring, and selling antique phonographs for over <strong>45 years</strong>.
             </p>
             <p>
-              At Old Time Crank, we restore and preserve authentic Edison
-              phonographs and Victrolas.
+              At Old Time Crank, we restore and preserve authentic Edison phonographs, Victor outside-horn players, and fine carved record cabinets.
             </p>
             <p>
-              Every piece is serviced, tested, and ready to play so history
-              lives on through sound.
+              Every single piece is completely disassembled, meticulously serviced, acoustically tuned, and rigorously tested so history lives on through vivid sound.
             </p>
-            <a href="items.html" class="btn btn-secondary">Visit Our Showroom</a>
+            <div style="margin-top: 2rem;">
+              <a href="items.html" class="btn btn-secondary">Explore The Complete Showroom</a>
+            </div>
           </div>
         </div>
       </section>
@@ -143,11 +283,15 @@
       <!-- CONTACT -->
       <section id="contact" class="contact-section">
         <div class="container" data-aos="fade-up">
-          <h2 class="section-title">Contact</h2>
-          <p>Call or email us to inquire about any item.</p>
+          <span class="section-tag">✦ Direct Inquiries ✦</span>
+          <h2 class="section-title">Inquire or Order Today</h2>
+          <p>Call, text, or email us directly with questions or to discuss custom shipping and crating for any instrument.</p>
           <p>
-            <a href="tel:9546491037">954-649-1037</a><br>
-            <a href="mailto:oldtimecrank@gmail.com">oldtimecrank@gmail.com</a>
+            <a href="tel:9546491037">📞 954-649-1037</a><br>
+            <a href="mailto:oldtimecrank@gmail.com">✉️ oldtimecrank@gmail.com</a>
+          </p>
+          <p style="margin-top: 1rem; color: #a89f91; font-size: 0.95rem;">
+            Located in Fort White, Florida • Worldwide Safe Freight Shipping Available
           </p>
         </div>
       </section>
@@ -160,31 +304,43 @@
         <div class="footer-col">
           <h3>Old Time Crank</h3>
           <p>Restoring history, one revolution at a time.</p>
+          <p style="margin-top: 0.8rem; font-size: 0.9rem; color: #bba990;">
+            Antique Phonographs • Cylinder Players • Vintage Record Cabinets
+          </p>
         </div>
         <div class="footer-col">
           <h4>Explore</h4>
           <ul>
             <li><a href="items.html">Items For Sale</a></li>
-            <li><a href="https://www.ebay.com/str/oldtimecrank" target="_blank">Our eBay Reviews</a></li>
+            <li><a href="#featured">Featured Masterpieces</a></li>
+            <li><a href="#about">Our Story & Heritage</a></li>
+            <li><a href="https://www.ebay.com/str/oldtimecrank" target="_blank" rel="noopener">Our 100% Positive eBay Store</a></li>
           </ul>
         </div>
-        <div class="footer-bottom">
-          <p>© 2025 Old Time Crank. All rights reserved.</p>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <p style="color: #c9bda9; margin-bottom: 0.5rem;">Fort White, FL 32038</p>
+          <p><a href="tel:9546491037">954-649-1037</a></p>
+          <p><a href="mailto:oldtimecrank@gmail.com">oldtimecrank@gmail.com</a></p>
         </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Old Time Crank. All rights reserved. Master antique restorations.</p>
+      </div>
     </footer>
 
-    <!-- Floating Call Button -->
-    <a href="tel:9546491037" class="floating-call-btn" aria-label="Call Us">
+    <!-- Floating Call Button with Dual Radar Pulse -->
+    <a href="tel:9546491037" class="floating-call-btn" aria-label="Call Us Directly">
       <span class="call-icon">📞</span>
-      <span class="call-text">Call Us</span>
+      <span class="call-text">Call Mike</span>
     </a>
 
   </div>
 
-  <!-- AOS -->
+  <!-- AOS Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ once: true });
+    AOS.init({ once: true, duration: 800, offset: 40 });
   </script>
 
   <!-- Main Application Script -->

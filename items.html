@@ -130,8 +130,18 @@
 </head>
 
 <body>
+    <!-- Top Scroll Reading Progress Indicator -->
+    <div id="scroll-progress" class="scroll-progress-bar"></div>
+
+    <!-- Ambient Luxury Background Canvas & Mesh Glow Orbs -->
+    <canvas id="ambient-canvas" class="ambient-canvas"></canvas>
+    <div class="ambient-glow-mesh" aria-hidden="true">
+        <div class="mesh-orb orb-1"></div>
+        <div class="mesh-orb orb-2"></div>
+        <div class="mesh-orb orb-3"></div>
+    </div>
+
     <div id="app">
-        <!-- Electric border glow effects are handled via CSS box-shadow only -->
 
         <!-- Header -->
         <header class="site-header">
@@ -144,6 +154,7 @@
                     <ul>
                         <li><a href="index.html#hero">Home</a></li>
                         <li><a href="items.html" class="active">Items For Sale</a></li>
+                        <li><a href="index.html#featured">Masterpieces</a></li>
                         <li><a href="index.html#about">Our Story</a></li>
                         <li><a href="index.html#contact" class="btn btn-outline"
                                 style="padding: 10px 22px;">Contact</a></li>
@@ -162,7 +173,13 @@
             <section class="page-hero">
                 <div class="container">
                     <div class="page-badge" data-aos="fade-down">
-                        <span>★</span> Curated Master Restorations &amp; Rare Audio Antiques <span>★</span>
+                        <span class="live-pulse-dot"></span> Curated Master Restorations &amp; Rare Audio Antiques
+                        <div class="spectrum-visualizer" aria-hidden="true">
+                            <span class="spectrum-bar"></span>
+                            <span class="spectrum-bar"></span>
+                            <span class="spectrum-bar"></span>
+                            <span class="spectrum-bar"></span>
+                        </div>
                     </div>
                     <h1 class="page-title" data-aos="fade-up" data-aos-delay="100">Items For Sale</h1>
                     <p class="page-subtitle" data-aos="fade-up" data-aos-delay="200">

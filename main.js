@@ -409,12 +409,318 @@ function initSidebarScrollSpy() {
 }
 
 // ==========================================================================
-// 5. Initialize Everything
+// 5. Pro Ambient Canvas Engine (Floating Bubbles, Golden Embers & Acoustic Pulses)
+// ==========================================================================
+class AmbientCanvasEngine {
+  constructor() {
+    this.canvas = document.getElementById('ambient-canvas');
+    if (!this.canvas) return;
+    this.ctx = this.canvas.getContext('2d');
+    if (!this.ctx) return;
+
+    this.particles = [];
+    this.pulseRings = [];
+    this.mouse = { x: -1000, y: -1000, isOver: false };
+    this.particleCount = window.innerWidth < 768 ? 25 : 55;
+    this.width = 0;
+    this.height = 0;
+    this.dpr = Math.min(window.devicePixelRatio || 1, 2);
+    this.isRunning = true;
+    this.lastPulseTime = 0;
+
+    this.init();
+  }
+
+  init() {
+    this.resize();
+    window.addEventListener('resize', () => this.resize(), { passive: true });
+
+    // Track mouse
+    window.addEventListener('mousemove', (e) => {
+      this.mouse.x = e.clientX;
+      this.mouse.y = e.clientY;
+      this.mouse.isOver = true;
+    }, { passive: true });
+
+    window.addEventListener('mouseleave', () => {
+      this.mouse.isOver = false;
+    });
+
+    // Acoustic pulse ring on click
+    window.addEventListener('click', (e) => {
+      this.addPulseRing(e.clientX, e.clientY);
+    });
+
+    // Populate particles
+    for (let i = 0; i < this.particleCount; i++) {
+      this.particles.push(this.createParticle(true));
+    }
+
+    // Page Visibility handling
+    document.addEventListener('visibilitychange', () => {
+      this.isRunning = !document.hidden;
+      if (this.isRunning) {
+        requestAnimationFrame((t) => this.render(t));
+      }
+    });
+
+    requestAnimationFrame((t) => this.render(t));
+  }
+
+  resize() {
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
+    this.canvas.width = this.width * this.dpr;
+    this.canvas.height = this.height * this.dpr;
+    this.ctx.scale(this.dpr, this.dpr);
+  }
+
+  createParticle(randomY = false) {
+    const isBubble = Math.random() > 0.45;
+    return {
+      x: Math.random() * this.width,
+      y: randomY ? Math.random() * this.height : this.height + Math.random() * 20,
+      radius: isBubble ? (Math.random() * 4.5 + 2) : (Math.random() * 2 + 1),
+      baseRadius: isBubble ? (Math.random() * 4.5 + 2) : (Math.random() * 2 + 1),
+      speedY: Math.random() * 0.45 + 0.2,
+      angle: Math.random() * Math.PI * 2,
+      angleSpeed: Math.random() * 0.02 + 0.005,
+      wobbleDistance: Math.random() * 1.5 + 0.5,
+      alpha: Math.random() * 0.4 + 0.15,
+      baseAlpha: Math.random() * 0.4 + 0.15,
+      pulseSpeed: Math.random() * 0.03 + 0.01,
+      pulsePhase: Math.random() * Math.PI * 2,
+      isBubble: isBubble,
+      hue: Math.random() > 0.6 ? '42, 85%, 65%' : (Math.random() > 0.3 ? '45, 90%, 75%' : '32, 80%, 55%') // Warm gold, champagne, amber
+    };
+  }
+
+  addPulseRing(x, y) {
+    this.pulseRings.push({
+      x: x,
+      y: y,
+      radius: 5,
+      maxRadius: Math.random() * 80 + 120,
+      alpha: 0.65,
+      lineWidth: 2
+    });
+  }
+
+  render(timestamp) {
+    if (!this.isRunning) return;
+
+    this.ctx.clearRect(0, 0, this.width, this.height);
+
+    // Auto-emit subtle acoustic center pulses
+    if (timestamp - this.lastPulseTime > 4500) {
+      this.lastPulseTime = timestamp;
+      this.addPulseRing(this.width * 0.5, this.height * 0.35);
+    }
+
+    // Render & update pulse rings
+    for (let i = this.pulseRings.length - 1; i >= 0; i--) {
+      const ring = this.pulseRings[i];
+      ring.radius += 1.4;
+      ring.alpha -= 0.008;
+
+      if (ring.alpha <= 0 || ring.radius >= ring.maxRadius) {
+        this.pulseRings.splice(i, 1);
+        continue;
+      }
+
+      this.ctx.beginPath();
+      this.ctx.arc(ring.x, ring.y, ring.radius, 0, Math.PI * 2);
+      this.ctx.strokeStyle = `rgba(212, 175, 55, ${ring.alpha})`;
+      this.ctx.lineWidth = ring.lineWidth;
+      this.ctx.stroke();
+    }
+
+    // Render & update particles / bubbles
+    for (let i = 0; i < this.particles.length; i++) {
+      const p = this.particles[i];
+
+      p.y -= p.speedY;
+      p.angle += p.angleSpeed;
+      p.x += Math.sin(p.angle) * p.wobbleDistance * 0.35;
+      p.pulsePhase += p.pulseSpeed;
+
+      // Mouse interactive push / flow
+      if (this.mouse.isOver) {
+        const dx = p.x - this.mouse.x;
+        const dy = p.y - this.mouse.y;
+        const dist = Math.hypot(dx, dy);
+        if (dist < 140 && dist > 0) {
+          const force = (140 - dist) / 140;
+          p.x += (dx / dist) * force * 1.8;
+          p.y += (dy / dist) * force * 1.8;
+        }
+      }
+
+      // Reset when particle floats off-screen
+      if (p.y < -30 || p.x < -30 || p.x > this.width + 30) {
+        this.particles[i] = this.createParticle(false);
+        continue;
+      }
+
+      const currentAlpha = p.baseAlpha + Math.sin(p.pulsePhase) * 0.12;
+
+      this.ctx.beginPath();
+      if (p.isBubble) {
+        // Glowing luxury bubble
+        const grad = this.ctx.createRadialGradient(
+          p.x - p.radius * 0.3, p.y - p.radius * 0.3, p.radius * 0.1,
+          p.x, p.y, p.radius
+        );
+        grad.addColorStop(0, `hsla(${p.hue}, ${Math.min(currentAlpha * 1.4, 0.85)})`);
+        grad.addColorStop(0.6, `hsla(${p.hue}, ${Math.min(currentAlpha * 0.6, 0.5)})`);
+        grad.addColorStop(1, `hsla(${p.hue}, 0)`);
+        
+        this.ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        this.ctx.fillStyle = grad;
+        this.ctx.fill();
+
+        // Subtle specular highlight on bubble
+        this.ctx.beginPath();
+        this.ctx.arc(p.x - p.radius * 0.35, p.y - p.radius * 0.35, p.radius * 0.25, 0, Math.PI * 2);
+        this.ctx.fillStyle = `rgba(255, 255, 255, ${Math.min(currentAlpha * 1.5, 0.75)})`;
+        this.ctx.fill();
+      } else {
+        // Soft golden acoustic light point
+        this.ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        this.ctx.fillStyle = `hsla(${p.hue}, ${Math.min(currentAlpha, 0.7)})`;
+        this.ctx.shadowColor = 'rgba(212, 175, 55, 0.5)';
+        this.ctx.shadowBlur = 6;
+        this.ctx.fill();
+        this.ctx.shadowBlur = 0;
+      }
+    }
+
+    requestAnimationFrame((t) => this.render(t));
+  }
+}
+
+// ==========================================================================
+// 6. Scroll Progress Bar Engine
+// ==========================================================================
+function initScrollProgress() {
+  const progressBar = document.getElementById('scroll-progress');
+  if (!progressBar) return;
+
+  function updateProgress() {
+    const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+    if (scrollTotal <= 0) return;
+    const progress = (window.scrollY / scrollTotal) * 100;
+    progressBar.style.width = `${Math.min(Math.max(progress, 0), 100)}%`;
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+}
+
+// ==========================================================================
+// 7. Interactive Mouse Spotlight on Cards
+// ==========================================================================
+function initCardSpotlights() {
+  const cards = document.querySelectorAll('.item-row, .heritage-card, .featured-preview-card, .sidebar-inner, .about-content');
+  
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+}
+
+// ==========================================================================
+// 8. Interactive 3D Perspective Tilt on Cards
+// ==========================================================================
+function init3DTiltEffect() {
+  const cards = document.querySelectorAll('.heritage-card, .featured-preview-card');
+  if (window.innerWidth <= 768) return;
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -6;
+      const rotateY = ((x - centerX) / centerX) * 6;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+}
+
+// ==========================================================================
+// 9. Interactive Click Wave Ripples
+// ==========================================================================
+function initClickRipples() {
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest('.btn, .cat-pill, .thumb, .slide-btn');
+    if (!target) return;
+
+    const rect = target.getBoundingClientRect();
+    const ripple = document.createElement('span');
+    ripple.className = 'click-ripple';
+    
+    const size = Math.max(rect.width, rect.height);
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+    ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+
+    target.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 700);
+  });
+}
+
+// ==========================================================================
+// 10. Back to Top Button Engine
+// ==========================================================================
+function initBackToTop() {
+  let backBtn = document.querySelector('.back-to-top-btn');
+  if (!backBtn) {
+    backBtn = document.createElement('button');
+    backBtn.className = 'back-to-top-btn';
+    backBtn.setAttribute('aria-label', 'Scroll back to top');
+    backBtn.innerHTML = '▲';
+    document.body.appendChild(backBtn);
+  }
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 450) {
+      backBtn.classList.add('visible');
+    } else {
+      backBtn.classList.remove('visible');
+    }
+  }, { passive: true });
+
+  backBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// ==========================================================================
+// 11. Initialize Everything
 // ==========================================================================
 function initApp() {
   initMobileMenu();
   new GraphicZoomLightbox();
   initSidebarScrollSpy();
+  new AmbientCanvasEngine();
+  initScrollProgress();
+  initCardSpotlights();
+  init3DTiltEffect();
+  initClickRipples();
+  initBackToTop();
 }
 
 if (document.readyState === 'loading') {
