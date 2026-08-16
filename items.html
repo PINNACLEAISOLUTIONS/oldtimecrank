@@ -142,11 +142,11 @@
                 </div>
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="index.html#hero"><span></span><span></span><span></span><span></span>Home</a></li>
-                        <li><a href="items.html"><span></span><span></span><span></span><span></span>Items For Sale</a></li>
-                        <li><a href="index.html#about"><span></span><span></span><span></span><span></span>Our Story</a></li>
+                        <li><a href="index.html#hero">Home</a></li>
+                        <li><a href="items.html" class="active">Items For Sale</a></li>
+                        <li><a href="index.html#about">Our Story</a></li>
                         <li><a href="index.html#contact" class="btn btn-outline"
-                                style="padding: 10px 20px;">Contact</a></li>
+                                style="padding: 10px 22px;">Contact</a></li>
                     </ul>
                 </nav>
                 <button class="mobile-menu-toggle" aria-label="Toggle navigation">
@@ -343,7 +343,10 @@
                             <div class="item-images">
                                 <div class="slideshow-container" id="slideshow-victor18">
                                     <div class="slide active">
-                                        <img src="./victrola_18_1.png" alt="Victor Victrola Model VV-XVIII Full Open Cabinet & 24K Gold Tonearm">
+                                        <img src="./victrola_18_5.png" alt="Victor Victrola Model VV-XVIII Full Angle Open Cabinet with 24K Gold Hardware">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./victrola_18_1.png" alt="Victor Victrola Model VV-XVIII Full Open Cabinet &amp; Turntable Deck">
                                     </div>
                                     <div class="slide">
                                         <img src="./victrola_18_2.png" alt="Victor Victrola Model VV-XVIII Front Closed Serpentine Cabinet">
@@ -353,6 +356,9 @@
                                     </div>
                                     <div class="slide">
                                         <img src="./victrola_18_4.png" alt="Victor Victrola Model VV-XVIII Turntable and Motor Deck Detail">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./victrola_18_tag.png" alt="Victor Victrola Model VV-XVIII Original Victor Talking Machine Co. Serial ID Data Plate">
                                     </div>
                                     <button class="slide-btn prev"
                                         onclick="changeSlide('slideshow-victor18', -1)" aria-label="Previous Slide">❮</button>
@@ -363,20 +369,28 @@
                                         <span class="dot" onclick="goToSlide('slideshow-victor18', 1)"></span>
                                         <span class="dot" onclick="goToSlide('slideshow-victor18', 2)"></span>
                                         <span class="dot" onclick="goToSlide('slideshow-victor18', 3)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-victor18', 4)"></span>
+                                        <span class="dot" onclick="goToSlide('slideshow-victor18', 5)"></span>
                                     </div>
                                 </div>
-                                <div class="thumbnails-grid">
-                                    <div class="thumb active" onclick="goToSlide('slideshow-victor18', 0)" title="Open Cabinet & Turntable">
-                                        <img src="./victrola_18_1.png" alt="Victor Victrola Model VV-XVIII Full Open Cabinet">
+                                <div class="thumbnails-grid" style="grid-template-columns: repeat(6, 1fr);">
+                                    <div class="thumb active" onclick="goToSlide('slideshow-victor18', 0)" title="Full View Open Cabinet">
+                                        <img src="./victrola_18_5.png" alt="Full View Open Cabinet">
                                     </div>
-                                    <div class="thumb" onclick="goToSlide('slideshow-victor18', 1)" title="Closed Serpentine Cabinet">
-                                        <img src="./victrola_18_2.png" alt="Victor Victrola Model VV-XVIII Front Closed Serpentine Cabinet">
+                                    <div class="thumb" onclick="goToSlide('slideshow-victor18', 1)" title="Deck &amp; Open Lid">
+                                        <img src="./victrola_18_1.png" alt="Deck &amp; Open Lid">
                                     </div>
-                                    <div class="thumb" onclick="goToSlide('slideshow-victor18', 2)" title="Record Storage Shelves">
-                                        <img src="./victrola_18_3.png" alt="Victor Victrola Model VV-XVIII Interior Record Storage Shelves">
+                                    <div class="thumb" onclick="goToSlide('slideshow-victor18', 2)" title="Closed Serpentine Cabinet">
+                                        <img src="./victrola_18_2.png" alt="Closed Serpentine Cabinet">
                                     </div>
-                                    <div class="thumb" onclick="goToSlide('slideshow-victor18', 3)" title="Turntable & Motor Deck">
-                                        <img src="./victrola_18_4.png" alt="Victor Victrola Model VV-XVIII Turntable and Motor Deck Detail">
+                                    <div class="thumb" onclick="goToSlide('slideshow-victor18', 3)" title="Record Storage Shelves">
+                                        <img src="./victrola_18_3.png" alt="Record Storage Shelves">
+                                    </div>
+                                    <div class="thumb" onclick="goToSlide('slideshow-victor18', 4)" title="Turntable &amp; Motor Deck">
+                                        <img src="./victrola_18_4.png" alt="Turntable &amp; Motor Deck">
+                                    </div>
+                                    <div class="thumb" onclick="goToSlide('slideshow-victor18', 5)" title="Original Serial Plate">
+                                        <img src="./victrola_18_tag.png" alt="Original Serial Plate">
                                     </div>
                                 </div>
                                 <div class="item-video">

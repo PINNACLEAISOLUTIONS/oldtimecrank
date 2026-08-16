@@ -209,12 +209,26 @@ class GraphicZoomLightbox {
       }
     });
 
-    // Double click to toggle zoom
-    this.imgContainer?.addEventListener('dblclick', () => {
+    // Click image to toggle zoom
+    this.imgContainer?.addEventListener('click', (e) => {
+      // If we were dragging, do not toggle zoom
+      if (this.wasDragging) {
+        this.wasDragging = false;
+        return;
+      }
+      if (this.scale === 1) {
+        this.scale = 2.2;
+        this.updateTransform();
+      }
+    });
+
+    // Double click to toggle zoom back and forth
+    this.imgContainer?.addEventListener('dblclick', (e) => {
+      e.preventDefault();
       if (this.scale > 1) {
         this.resetTransform();
       } else {
-        this.scale = 2.2;
+        this.scale = 2.5;
         this.updateTransform();
       }
     });
