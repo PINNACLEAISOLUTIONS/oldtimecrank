@@ -37,11 +37,15 @@ window.changeSlide = function(slideshowId, direction) {
   if (!container) return;
   const slides = container.querySelectorAll('.slide');
   const dots = container.querySelectorAll('.dot');
+  const parent = container.closest('.item-images') || container.parentElement;
+  const thumbs = parent ? parent.querySelectorAll('.thumbnails-grid .thumb') : [];
+  
   let currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
   if (currentIndex === -1) currentIndex = 0;
 
   slides[currentIndex].classList.remove('active');
   if (dots[currentIndex]) dots[currentIndex].classList.remove('active');
+  if (thumbs[currentIndex]) thumbs[currentIndex].classList.remove('active');
 
   currentIndex += direction;
   if (currentIndex >= slides.length) currentIndex = 0;
@@ -49,6 +53,7 @@ window.changeSlide = function(slideshowId, direction) {
 
   slides[currentIndex].classList.add('active');
   if (dots[currentIndex]) dots[currentIndex].classList.add('active');
+  if (thumbs[currentIndex]) thumbs[currentIndex].classList.add('active');
 };
 
 window.goToSlide = function(slideshowId, index) {
@@ -56,12 +61,16 @@ window.goToSlide = function(slideshowId, index) {
   if (!container) return;
   const slides = container.querySelectorAll('.slide');
   const dots = container.querySelectorAll('.dot');
+  const parent = container.closest('.item-images') || container.parentElement;
+  const thumbs = parent ? parent.querySelectorAll('.thumbnails-grid .thumb') : [];
 
   slides.forEach(slide => slide.classList.remove('active'));
   dots.forEach(dot => dot.classList.remove('active'));
+  thumbs.forEach(thumb => thumb.classList.remove('active'));
 
   if (slides[index]) slides[index].classList.add('active');
   if (dots[index]) dots[index].classList.add('active');
+  if (thumbs[index]) thumbs[index].classList.add('active');
 };
 
 // ==========================================================================
@@ -386,10 +395,16 @@ function initSidebarScrollSpy() {
 }
 
 // ==========================================================================
-// 5. Initialize Everything on DOMContentLoaded
+// 5. Initialize Everything
 // ==========================================================================
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
   initMobileMenu();
   new GraphicZoomLightbox();
   initSidebarScrollSpy();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}

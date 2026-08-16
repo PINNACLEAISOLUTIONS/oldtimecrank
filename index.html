@@ -178,25 +178,14 @@
 
   </div>
 
-  <!-- MAIN JS -->
-  <script type="module" src="./main.js"></script>
-
   <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ once: true });
-
-    // Mobile Menu Toggle
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const mainNav = document.querySelector('.main-nav');
-
-    menuToggle.addEventListener('click', () => {
-      mainNav.classList.toggle('active');
-      const isExpanded = mainNav.classList.contains('active');
-      menuToggle.setAttribute('aria-expanded', isExpanded);
-    });
   </script>
 
+  <!-- Main Application Script -->
+  <script src="./main.js"></script>
 </body>
 
 </html>
